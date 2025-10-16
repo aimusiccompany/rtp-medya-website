@@ -1,3 +1,5 @@
+"use client"  // <<--- BU ÇOK ÖNEMLİ
+
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -65,7 +67,7 @@ export default function ProfesyonelSeslendirmePage() {
             <Button
               size="lg"
               className="bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 text-white text-lg px-8 py-6 shadow-lg"
-              onClick={() => window.location.href = "/teklif-al"} // yönlendirme eklendi
+              onClick={() => window.location.href = "/teklif-al"} 
             >
               Teklif Alın
             </Button>
@@ -91,6 +93,7 @@ export default function ProfesyonelSeslendirmePage() {
         </div>
       </section>
 
+      {/* Hizmet Alanları */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -121,6 +124,7 @@ export default function ProfesyonelSeslendirmePage() {
         </div>
       </section>
 
+      {/* Çalışma Süreci */}
       <section className="py-20 bg-gradient-to-b from-background to-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -129,74 +133,31 @@ export default function ProfesyonelSeslendirmePage() {
             </h2>
 
             <div className="space-y-6">
-              <Card className="border-2 hover:border-red-600/50 transition-all duration-300">
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-800 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-xl">
-                      1
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold mb-3">Proje Brifingi</h3>
-                      <p className="text-muted-foreground leading-relaxed text-lg">
-                        Projenizin detaylarını, hedef kitlenizi ve beklentilerinizi dinliyoruz.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 hover:border-red-600/50 transition-all duration-300">
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-800 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-xl">
-                      2
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold mb-3">Seslendirmen Seçimi</h3>
-                      <p className="text-muted-foreground leading-relaxed text-lg">
-                        Projenize en uygun ses tonunu ve karakteri birlikte belirliyoruz.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 hover:border-red-600/50 transition-all duration-300">
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-800 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-xl">
-                      3
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold mb-3">Kayıt & Prodüksiyon</h3>
-                      <p className="text-muted-foreground leading-relaxed text-lg">
-                        Profesyonel stüdyomuzda kayıt yapıyor ve post-prodüksiyon süreçlerini tamamlıyoruz.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 hover:border-red-600/50 transition-all duration-300">
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-800 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-xl">
-                      4
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold mb-3">Teslimat</h3>
-                      <p className="text-muted-foreground leading-relaxed text-lg">
-                        Final dosyalarınızı istediğiniz formatta teslim ediyoruz.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              {["Proje Brifingi", "Seslendirmen Seçimi", "Kayıt & Prodüksiyon", "Teslimat"].map(
+                (step, idx) => (
+                  <Card key={idx} className="border-2 hover:border-red-600/50 transition-all duration-300">
+                    <CardContent className="p-8">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-800 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-xl">
+                          {idx + 1}
+                        </div>
+                        <div>
+                          <h3 className="text-2xl font-bold mb-3">{step}</h3>
+                          <p className="text-muted-foreground leading-relaxed text-lg">
+                            {/* Buraya açıklamalar eklenebilir */}
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                )
+              )}
             </div>
           </div>
         </div>
       </section>
 
+      {/* CTA */}
       <section className="py-20 bg-gradient-to-br from-red-600 to-red-800 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
@@ -208,7 +169,7 @@ export default function ProfesyonelSeslendirmePage() {
               size="lg"
               variant="secondary"
               className="text-lg px-8 py-6 bg-white text-red-600 hover:bg-gray-100"
-              onClick={() => window.location.href = "/teklif-al"} // yönlendirme eklendi
+              onClick={() => window.location.href = "/teklif-al"} 
             >
               Teklif Alın
             </Button>

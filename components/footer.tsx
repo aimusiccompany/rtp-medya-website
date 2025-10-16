@@ -65,31 +65,41 @@ export function Footer() {
             <h3 className="font-bold mb-4">Bizi Takip Edin</h3>
             <div className="flex gap-3">
               <Link
-                href="#"
+                href="https://www.facebook.com/people/AI-Music/61565593201997/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-muted hover:bg-gradient-to-br hover:from-red-600 hover:to-red-800 rounded-lg flex items-center justify-center transition-all duration-300 group hover:shadow-lg"
               >
                 <Facebook size={20} className="text-muted-foreground group-hover:text-white transition-colors" />
               </Link>
               <Link
-                href="#"
+                href="https://www.instagram.com/rtpmedya/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-muted hover:bg-gradient-to-br hover:from-red-600 hover:to-red-800 rounded-lg flex items-center justify-center transition-all duration-300 group hover:shadow-lg"
               >
                 <Instagram size={20} className="text-muted-foreground group-hover:text-white transition-colors" />
               </Link>
               <Link
-                href="#"
+                href="https://x.com/aimusictr?s=21&t=kYXi7dATTiNj2Kdsv3hR5g"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-muted hover:bg-gradient-to-br hover:from-red-600 hover:to-red-800 rounded-lg flex items-center justify-center transition-all duration-300 group hover:shadow-lg"
               >
                 <Twitter size={20} className="text-muted-foreground group-hover:text-white transition-colors" />
               </Link>
               <Link
-                href="#"
+                href="https://www.youtube.com/@rtpmedya3400"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-muted hover:bg-gradient-to-br hover:from-red-600 hover:to-red-800 rounded-lg flex items-center justify-center transition-all duration-300 group hover:shadow-lg"
               >
                 <Youtube size={20} className="text-muted-foreground group-hover:text-white transition-colors" />
               </Link>
               <Link
-                href="#"
+                href="https://tr.linkedin.com/company/rtp-medya"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-muted hover:bg-gradient-to-br hover:from-red-600 hover:to-red-800 rounded-lg flex items-center justify-center transition-all duration-300 group hover:shadow-lg"
               >
                 <Linkedin size={20} className="text-muted-foreground group-hover:text-white transition-colors" />

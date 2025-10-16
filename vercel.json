@@ -1,0 +1,29 @@
+{
+  "redirects": [
+    {
+      "source": "/cozumlerimiz",
+      "destination": "/hizmetler/kurumsal-radyo",
+      "permanent": true
+    },
+    {
+      "source": "/hizmet/otellerde-muzik",
+      "destination": "/hizmet-alanlari/otel",
+      "permanent": true
+    },
+    {
+      "source": "/cozumlerimiz/rtp-medya-shoutcats",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/produksiyon",
+      "destination": "/hizmetler/profesyonel-seslendirme",
+      "permanent": true
+    },
+    {
+      "source": "/basinda-biz",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}

@@ -8,7 +8,7 @@ export function HeroSection() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-red-950/10"
     >
-      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-20" />
       <div
         className="absolute inset-0 bg-gradient-to-br from-red-600/10 via-transparent to-red-800/10 animate-pulse"
         style={{ animationDuration: "8s" }}

@@ -8,10 +8,15 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "RTP Medya - Profesyonel Medya Çözümleri",
+  title: "RTP Medya - Kurumsal Radyo Hizmeti",
   description:
-    "Video prodüksiyon, müzik prodüksiyonu ve dijital medya hizmetleri ile markanızı bir adım öne taşıyoruz.",
-    generator: 'v0.app'
+    "Kurumsal radyo, işletme içi anons, radyo hizmetleri ve dijital medya hizmetleri ile markanızı bir adım öne taşıyoruz.",
+  generator: "v0.app",
+  icons: {
+    icon: "/favicon.ico",       // Tarayıcı sekmesindeki ana ikon
+    shortcut: "/favicon.ico",   // Kısayol ve pinned tab için
+    apple: "/apple-touch-icon.png", // iOS cihazlar için (isteğe bağlı)
+  },
 }
 
 export default function RootLayout({

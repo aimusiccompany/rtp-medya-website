@@ -98,12 +98,19 @@ export function Header() {
             )}
           </nav>
 
-          <div className="hidden lg:block">
+          {/* Sağ üst butonlar */}
+          <div className="hidden lg:flex items-center gap-4">
             <Link href="/teklif-al">
               <Button className="bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 Teklif Al
               </Button>
             </Link>
+            <Button
+              className="bg-gradient-to-r from-red-500 to-red-700 hover:from-red-600 hover:to-red-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              onClick={() => window.open("https://panel.rtpmedya.com/", "_blank")}
+            >
+              Yayın Paneli
+            </Button>
           </div>
 
           <button className="lg:hidden text-foreground" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
@@ -172,6 +179,12 @@ export function Header() {
                   Teklif Al
                 </Button>
               </Link>
+              <Button
+                className="bg-gradient-to-r from-red-500 to-red-700 hover:from-red-600 hover:to-red-800 text-white w-full mt-2"
+                onClick={() => window.open("https://panel.rtpmedya.com/", "_blank")}
+              >
+                Yayın Paneli
+              </Button>
             </nav>
           </div>
         </div>

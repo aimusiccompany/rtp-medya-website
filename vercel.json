@@ -26,6 +26,11 @@
       "permanent": true
     },
     {
+      "source": "/restaurantlarda-muzik",
+      "destination": "/restoran",
+      "permanent": true
+    },
+    {
       "source": "/cozumlerimiz/rtp-media-player",
       "destination": "/player",
       "permanent": true

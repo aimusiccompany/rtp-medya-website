@@ -25,5 +25,10 @@
       "destination": "/",
       "permanent": true
     }
+    {
+      "source": "/cozumlerimiz/rtp-media-player",
+      "destination": "/player",
+      "permanent": true
+    },
   ]
 }

@@ -6,13 +6,19 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-red-950/10"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
     >
-      <div className="absolute inset-0 bg-grid-pattern opacity-20" />
-      <div
-        className="absolute inset-0 bg-gradient-to-br from-red-600/10 via-transparent to-red-800/10 animate-pulse"
-        style={{ animationDuration: "8s" }}
-      />
+      {/* Arkaplan animasyonu */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Köşe ışıkları */}
+        <div className="absolute top-0 left-0 w-64 h-64 bg-red-600/20 rounded-full blur-3xl animate-ping-slow" />
+        <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/20 rounded-full blur-3xl animate-ping-slow delay-200" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-red-400/20 rounded-full blur-3xl animate-ping-slow delay-400" />
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-red-500/10 rounded-full blur-3xl animate-ping-slow delay-600" />
+
+        {/* Kenar geçişleri */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-red-600/10 via-transparent to-red-800/10 animate-gradient-move"></div>
+      </div>
 
       <div className="container mx-auto px-4 py-32 relative z-10">
         <div className="max-w-4xl mx-auto text-center">

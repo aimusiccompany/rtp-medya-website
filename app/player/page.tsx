@@ -42,9 +42,10 @@ export default function PlayerPage() {
   ]
 
   const handleDownload = () => {
-    // Public klasöründeki dosyaya link
+    // GitHub Release üzerinden indirilecek dosya linki
     const link = document.createElement("a")
-    link.href = "/downloads/RTPMedyaPlayer-Setup.exe"
+    link.href =
+      "https://github.com/aimusiccompany/rtp-medya-website/releases/download/v1.0/RTPMedyaPlayer-Setup.exe"
     link.download = "RTPMedyaPlayer-Setup.exe"
     document.body.appendChild(link)
     link.click()

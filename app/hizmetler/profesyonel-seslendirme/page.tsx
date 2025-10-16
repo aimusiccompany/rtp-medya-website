@@ -65,6 +65,7 @@ export default function ProfesyonelSeslendirmePage() {
             <Button
               size="lg"
               className="bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 text-white text-lg px-8 py-6 shadow-lg"
+              onClick={() => window.location.href = "/teklif-al"} // yönlendirme eklendi
             >
               Teklif Alın
             </Button>
@@ -203,7 +204,12 @@ export default function ProfesyonelSeslendirmePage() {
             <p className="text-xl mb-8 text-white/90 leading-relaxed">
               Seslendirme ihtiyaçlarınız için bizimle iletişime geçin, size özel çözümler sunalım
             </p>
-            <Button size="lg" variant="secondary" className="text-lg px-8 py-6 bg-white text-red-600 hover:bg-gray-100">
+            <Button
+              size="lg"
+              variant="secondary"
+              className="text-lg px-8 py-6 bg-white text-red-600 hover:bg-gray-100"
+              onClick={() => window.location.href = "/teklif-al"} // yönlendirme eklendi
+            >
               Teklif Alın
             </Button>
           </div>

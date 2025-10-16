@@ -65,6 +65,7 @@ export default function KurumsalRadyoPage() {
             <Button
               size="lg"
               className="bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 text-white text-lg px-8 py-6 shadow-lg"
+              onClick={() => window.location.href = "/teklif-al"} // yönlendirme eklendi
             >
               Teklif Alın
             </Button>

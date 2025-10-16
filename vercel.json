@@ -27,7 +27,7 @@
     },
     {
       "source": "/hizmet/restaurantlarda-muzik",
-      "destination": "/restoran",
+      "destination": "/hizmet-alanlari/restoran",
       "permanent": true
     },
     {

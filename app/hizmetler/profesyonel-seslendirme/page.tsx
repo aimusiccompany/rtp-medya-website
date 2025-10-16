@@ -169,9 +169,9 @@ export default function ProfesyonelSeslendirmePage() {
               size="lg"
               variant="secondary"
               className="text-lg px-8 py-6 bg-white text-red-600 hover:bg-gray-100"
-              onClick={() => window.location.href = "/teklif-al"} 
+              onClick={() => window.location.href = "/iletisim"} 
             >
-              Teklif Alın
+              İletişime Geç
             </Button>
           </div>
         </div>

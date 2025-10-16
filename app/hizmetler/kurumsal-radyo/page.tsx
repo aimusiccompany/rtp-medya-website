@@ -1,4 +1,4 @@
-"use client"
+ "use client"
 
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -129,7 +129,12 @@ export default function KurumsalRadyoPage() {
             <p className="text-xl mb-8 text-white/90 leading-relaxed">
               Kurumsal radyo çözümlerimiz hakkında detaylı bilgi almak için bizimle iletişime geçin
             </p>
-            <Button size="lg" variant="secondary" className="text-lg px-8 py-6 bg-white text-red-600 hover:bg-gray-100">
+            <Button
+              size="lg"
+              variant="secondary"
+              className="text-lg px-8 py-6 bg-white text-red-600 hover:bg-gray-100"
+              onClick={() => window.location.href = "/iletisim"} 
+            >
               İletişime Geç
             </Button>
           </div>

@@ -120,26 +120,21 @@
   body { @apply bg-background text-foreground; }
 }
 
-/* HeroSection köşe animasyonu */
-.corner-gradient {
+/* HeroSection arka plan animasyonu (minimal, silik kırmızı geçiş) */
+.hero-gradient {
   position: absolute;
-  width: 200%;
-  height: 200%;
-  top: -50%;
-  left: -50%;
-  background: radial-gradient(circle at top left, rgba(255,0,0,0.15), transparent 50%),
-              radial-gradient(circle at top right, rgba(255,0,0,0.1), transparent 50%),
-              radial-gradient(circle at bottom left, rgba(255,0,0,0.1), transparent 50%),
-              radial-gradient(circle at bottom right, rgba(255,0,0,0.05), transparent 50%);
-  animation: corner-move 15s linear infinite;
+  inset: 0;
+  background: linear-gradient(270deg, rgba(255,0,0,0.05), rgba(255,77,77,0.05), rgba(255,26,26,0.05), rgba(179,0,0,0.05));
+  background-size: 400% 400%;
+  animation: gradient-flow 20s ease infinite;
   pointer-events: none;
   z-index: 0;
 }
 
-@keyframes corner-move {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(20px, 20px) rotate(180deg); }
-  100% { transform: translate(0, 0) rotate(360deg); }
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Mevcut Animasyonlar */

@@ -9,8 +9,9 @@ export function HeroSection() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
     >
       {/* Arkaplan animasyonu */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-red-600 via-red-500 to-red-800 animate-gradient-red"></div>
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Minimal kırmızı degrade arka plan */}
+        <div className="absolute inset-0 hero-gradient"></div>
       </div>
 
       <div className="container mx-auto px-4 py-32 relative z-10">

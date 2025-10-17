@@ -1,34 +1,40 @@
 import { NextResponse } from "next/server"
+import nodemailer from "nodemailer"
 
 export async function POST(request: Request) {
   try {
     const data = await request.json()
 
-    console.log("[v0] Quote request submission:", data)
-    console.log("[v0] Sending to: info@rtpmedya.com.tr")
+    // SMTP ayarları
+    const transporter = nodemailer.createTransport({
+      host: "mail.rtpmedya.com.tr",
+      port: 587,
+      secure: false, // 587 için TLS kullanıyoruz
+      auth: {
+        user: "info@rtpmedya.com.tr",
+        pass: "InfoRtp150305.!",
+      },
+    })
 
-    // TODO: Implement actual email sending
-    // Example with Resend:
-    // await resend.emails.send({
-    //   from: 'noreply@rtpmedya.com.tr',
-    //   to: 'info@rtpmedya.com.tr',
-    //   subject: `Yeni Teklif Talebi: ${data.companyName}`,
-    //   html: `
-    //     <h2>Yeni Teklif Talebi</h2>
-    //     <p><strong>Firma:</strong> ${data.companyName}</p>
-    //     <p><strong>Ad Soyad:</strong> ${data.name}</p>
-    //     <p><strong>E-posta:</strong> ${data.email}</p>
-    //     <p><strong>Telefon:</strong> ${data.phone}</p>
-    //     <p><strong>Sektör:</strong> ${data.sector}</p>
-    //     <p><strong>Hizmet:</strong> ${data.service}</p>
-    //     <p><strong>Mesaj:</strong></p>
-    //     <p>${data.message}</p>
-    //   `
-    // })
+    // Mail gönderimi
+    await transporter.sendMail({
+      from: `"RTP Medya" <info@rtpmedya.com.tr>`,
+      to: "info@rtpmedya.com.tr", // mailin size gelmesini istediğiniz adres
+      subject: `Yeni İletişim Mesajı: ${data.subject}`,
+      html: `
+        <h2>Yeni İletişim Formu</h2>
+        <p><strong>Ad Soyad:</strong> ${data.name}</p>
+        <p><strong>E-posta:</strong> ${data.email}</p>
+        <p><strong>Telefon:</strong> ${data.phone}</p>
+        <p><strong>Konu:</strong> ${data.subject}</p>
+        <p><strong>Mesaj:</strong></p>
+        <p>${data.message}</p>
+      `
+    })
 
     return NextResponse.json({ success: true })
   } catch (error) {
-    console.error("[v0] Quote request error:", error)
-    return NextResponse.json({ error: "Failed to send quote request" }, { status: 500 })
+    console.error("[Contact API] Hata:", error)
+    return NextResponse.json({ error: "Mesaj gönderilemedi" }, { status: 500 })
   }
 }

@@ -117,16 +117,20 @@
 
 @layer base {
   * { @apply border-border outline-ring/50; }
+
   html, body {
     @apply bg-background text-foreground;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    /* overflow-y: scroll; => Kaldırıldı, tarayıcı otomatik açacak */
+
+    /* 🧩 Scroll stabilizasyonu eklendi */
+    scrollbar-gutter: stable both-edges;
+    overflow-y: auto;
   }
 }
 
-/* HeroSection arka plan animasyonu (minimal, silik kırmızı geçiş) */
+/* HeroSection arka plan animasyonu */
 .hero-gradient {
   position: absolute;
   inset: 0;
@@ -144,7 +148,6 @@
   100% { background-position: 0% 50%; }
 }
 
-/* Mevcut Animasyonlar */
 @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes fade-in-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes slide-in-right { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
@@ -155,16 +158,11 @@
 .animate-slide-in-right { animation: slide-in-right 0.6s ease-out; }
 .animate-scale-in { animation: scale-in 0.5s ease-out; }
 
-/* Sayfa geçişleri */
 @keyframes page-enter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 .page-transition { animation: page-enter 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
 
-/* Scroll */
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
-/* Mobile menu */
 @media (max-width: 1024px) {
   .mobile-menu-open { position: fixed; top: 80px; left: 0; right: 0; background: var(--background); z-index: 40; }
 }

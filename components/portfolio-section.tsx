@@ -1,31 +1,42 @@
+"use client"
+
+import { useRouter } from "next/navigation"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
 const projects = [
   {
-    title: "Kurumsal Radyo Çözümleri",
+    title: "İşletme İçi Radyo Çözümleri",
     category: "Kurumsal Radyo",
     image: "/corporate-radio-broadcasting-studio.jpg",
-    tags: ["Radyo", "Kurumsal"],
+    tags: ["Radyo", "Kurumsal", "İşletme Radyosu"],
     description: "İşletmeniz için özel müzik yayını ve radyo çözümleri",
+    link: "/hizmetler/kurumsal-radyo",
   },
   {
     title: "Profesyonel Seslendirme",
     category: "Seslendirme",
     image: "/professional-voice-recording-studio.jpg",
-    tags: ["Seslendirme", "Stüdyo"],
-    description: "Reklam, tanıtım ve kurumsal projeler için profesyonel ses kayıtları",
+    tags: ["Seslendirme", "Stüdyo", "Sosyal Medya", "Radyo"],
+    description: "Reklam, insert, tanıtım ve kurumsal projeler için profesyonel ses kayıtları",
+    link: "/hizmetler/profesyonel-seslendirme",
   },
 ]
 
 export function PortfolioSection() {
+  const router = useRouter()
+
+  const handleClick = (url: string) => {
+    router.push(url) // ✅ Next.js dahili yönlendirme
+  }
+
   return (
     <section id="portfolio" className="py-24 bg-gradient-to-b from-muted/30 to-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Hizmetlerimiz</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
-            Profesyonel medya çözümlerimizle işinizi bir adım öne taşıyın
+            Profesyonel kurumsal radyo çözümlerimizle işinizi bir adım öne taşıyın, ziyaretçilerinize unutulmaz anlar yaşatın.
           </p>
         </div>
 
@@ -33,7 +44,8 @@ export function PortfolioSection() {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 hover:border-red-600/50"
+              onClick={() => handleClick(project.link)}
+              className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 hover:border-red-600/50 cursor-pointer"
             >
               <div className="relative overflow-hidden aspect-video">
                 <img

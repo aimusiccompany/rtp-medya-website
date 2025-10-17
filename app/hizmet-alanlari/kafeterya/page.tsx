@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle2, Music, Volume2, Radio } from "lucide-react"
 import Link from "next/link"
 
-export default function RestoranPage() {
+export default function KafeteryaPage() {
   const features = [
     "Kafeterya konseptinize özel müzik seçimi",
     "Telif hakkı ödemesi gerektirmeyen lisanslı müzik",
@@ -42,7 +42,7 @@ export default function RestoranPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
-                Restoran İçi Müzik Yayını
+                Kafeterya İçi Müzik Yayını
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
                 Kafeteryanızın atmosferini doğru müziklerle zenginleştirin. Müşterilerinize unutulmaz bir yemek deneyimi
@@ -53,8 +53,8 @@ export default function RestoranPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
               <div>
                 <img
-                  src="/elegant-restaurant-interior.png"
-                  alt="Restoran İçi Müzik"
+                  src="/cafe-interior.jpg"
+                  alt="Kafeterya İçi Müzik"
                   className="w-full h-[400px] object-cover rounded-2xl shadow-2xl"
                 />
               </div>
@@ -122,9 +122,9 @@ export default function RestoranPage() {
 
             <Card className="bg-gradient-to-r from-red-600 to-red-800 border-0 text-white">
               <CardContent className="p-12 text-center">
-                <h2 className="text-3xl font-bold mb-4">Restoranınız İçin Özel Müzik Çözümü</h2>
+                <h2 className="text-3xl font-bold mb-4">Kafeteryanız İçin Özel Müzik Çözümü</h2>
                 <p className="text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-                  Hemen bizimle iletişime geçin ve restoranınız için özel hazırlanmış müzik programımızı keşfedin.
+                  Hemen bizimle iletişime geçin ve kafeteryanız için özel hazırlanmış müzik programımızı keşfedin.
                   Ücretsiz demo ve danışmanlık hizmeti için formu doldurun.
                 </p>
                 <Link href="/teklif-al">

@@ -36,6 +36,7 @@ export function Header() {
       href: "#",
       dropdown: [
         { label: "Restoran İçi Müzik Yayını", href: "/hizmet-alanlari/restoran" },
+        { label: "Kafeterya İçi Müzik Yayını", href: "/hizmet-alanlari/kafeterya" },
         { label: "Mağaza İçi Müzik Yayını", href: "/hizmet-alanlari/magaza" },
         { label: "Market İçi Müzik Yayını", href: "/hizmet-alanlari/market" },
         { label: "AVM İçi Müzik Yayını", href: "/hizmet-alanlari/avm" },

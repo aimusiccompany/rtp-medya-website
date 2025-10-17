@@ -153,6 +153,7 @@ export default function TeklifAlPage() {
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="restoran">Restoran</SelectItem>
+                          <SelectItem value="kafeterya">Kafeterya</SelectItem>
                           <SelectItem value="magaza">Mağaza</SelectItem>
                           <SelectItem value="market">Market</SelectItem>
                           <SelectItem value="avm">AVM</SelectItem>
@@ -190,7 +191,7 @@ export default function TeklifAlPage() {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Projeniz hakkında detaylı bilgi verin..."
+                      placeholder="İşletmeniz ve talepleriniz hakkında detaylı bilgi verin..."
                       rows={6}
                       className="transition-all duration-300 focus:border-red-600"
                     />
@@ -202,10 +203,10 @@ export default function TeklifAlPage() {
                       Teklif Aldıktan Sonra
                     </h3>
                     <ul className="space-y-2 text-sm text-muted-foreground ml-7">
-                      <li>• 24 saat içinde size geri dönüş yapacağız</li>
-                      <li>• İhtiyaçlarınıza özel çözüm sunacağız</li>
-                      <li>• Detaylı fiyat teklifi alacaksınız</li>
-                      <li>• Ücretsiz demo ve danışmanlık hizmeti</li>
+                      <li>• 24 saat içinde size geri dönüş yapacağız.</li>
+                      <li>• İhtiyaçlarınıza özel çözüm sunacağız.</li>
+                      <li>• Detaylı fiyat teklifi alacaksınız.</li>
+                      <li>• Ücretsiz demo ve danışmanlık hizmeti alacaksınız.</li>
                     </ul>
                   </div>
 

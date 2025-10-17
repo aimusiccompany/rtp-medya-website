@@ -62,21 +62,26 @@ export default function TeklifAlPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <>
       <Header />
 
-      <main className="flex-1 pt-32 pb-24">
+      {/* Hero Section */}
+      <section className="relative py-24 bg-gradient-to-br from-red-600 via-red-700 to-gray-900 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/abstract-sound-waves.png')] opacity-10 bg-cover bg-center" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance">Ücretsiz Teklif Alın</h1>
+            <p className="text-xl md:text-2xl text-red-50 leading-relaxed">
+              Size özel çözümlerimiz hakkında detaylı bilgi almak için formu doldurun
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Teklif Form Section */}
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
-                Ücretsiz Teklif Alın
-              </h1>
-              <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
-                Size özel çözümlerimiz hakkında detaylı bilgi almak için formu doldurun
-              </p>
-            </div>
-
             <Card className="border-2 hover:border-red-600/30 transition-colors shadow-xl">
               <CardContent className="p-8 md:p-12">
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -217,9 +222,9 @@ export default function TeklifAlPage() {
             </Card>
           </div>
         </div>
-      </main>
+      </section>
 
       <Footer />
-    </div>
+    </>
   );
 }

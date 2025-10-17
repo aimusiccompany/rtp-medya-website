@@ -7,6 +7,15 @@ export async function POST(request: Request) {
 
     console.log("Form verisi alındı:", data)
 
+    // Debug: Environment değişkenlerini kontrol et
+    console.log("SMTP ENV:", {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS ? "****" : undefined, // şifreyi gizle
+      host: process.env.SMTP_HOST,
+      port: process.env.SMTP_PORT,
+      to: process.env.MAIL_TO
+    })
+
     // Nodemailer transporter
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
@@ -19,7 +28,7 @@ export async function POST(request: Request) {
     })
 
     // Mail gönderimi
-    await transporter.sendMail({
+    const info = await transporter.sendMail({
       from: `"RTP Medya" <${process.env.SMTP_USER}>`,
       to: process.env.MAIL_TO,
       subject: `Yeni İletişim Mesajı: ${data.subject}`,
@@ -34,11 +43,15 @@ export async function POST(request: Request) {
       `
     })
 
-    console.log("Mail başarıyla gönderildi ✅")
+    console.log("Mail başarıyla gönderildi ✅", info)
 
     return NextResponse.json({ success: true })
-  } catch (error) {
+  } catch (error: any) {
     console.error("[Contact API] Hata:", error)
-    return NextResponse.json({ error: "Mesaj gönderilemedi" }, { status: 500 })
+    // Hata mesajını frontend’e göndermek için daha açıklayıcı yapıyoruz
+    return NextResponse.json(
+      { error: error.message || "Mesaj gönderilemedi" },
+      { status: 500 }
+    )
   }
 }

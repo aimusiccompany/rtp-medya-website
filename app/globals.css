@@ -5,12 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Eğer tw-animate-css kullanıyorsan, npm paketi kurulduğunda bu import çalışır */
-@import "tw-animate-css/tailwind.css";
-
-/* Dark mode için custom variant (Tailwind plugin gerekli) */
-@custom-variant dark (&:is(.dark *));
-
 /* CSS değişkenleri */
 :root {
   --background: oklch(1 0 0);

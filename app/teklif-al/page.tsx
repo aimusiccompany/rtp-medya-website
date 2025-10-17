@@ -1,17 +1,15 @@
-"use client"
+"use client";
 
-import type React from "react"
-
-import { useState } from "react"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { CheckCircle2 } from "lucide-react"
+import { useState } from "react";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { CheckCircle2 } from "lucide-react";
 
 export default function TeklifAlPage() {
   const [formData, setFormData] = useState({
@@ -22,37 +20,46 @@ export default function TeklifAlPage() {
     sector: "",
     service: "",
     message: "",
-  })
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-
-    const response = await fetch("/api/quote", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    })
-
-    if (response.ok) {
-      alert("Teklif talebiniz başarıyla gönderildi! En kısa sürede size dönüş yapacağız.")
-      setFormData({
-        companyName: "",
-        name: "",
-        email: "",
-        phone: "",
-        sector: "",
-        service: "",
-        message: "",
-      })
-    }
-  }
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert("Teklif talebiniz başarıyla gönderildi! En kısa sürede size dönüş yapacağız.");
+        setFormData({
+          companyName: "",
+          name: "",
+          email: "",
+          phone: "",
+          sector: "",
+          service: "",
+          message: "",
+        });
+      } else {
+        alert(`Hata: ${result.error}`);
+      }
+    } catch (error) {
+      alert("Sunucuya bağlanılamıyor. Lütfen tekrar deneyin.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -200,9 +207,10 @@ export default function TeklifAlPage() {
                   <Button
                     type="submit"
                     size="lg"
+                    disabled={isSubmitting}
                     className="w-full bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
                   >
-                    Teklif Talebini Gönder
+                    {isSubmitting ? "Gönderiliyor..." : "Teklif Talebini Gönder"}
                   </Button>
                 </form>
               </CardContent>
@@ -213,5 +221,5 @@ export default function TeklifAlPage() {
 
       <Footer />
     </div>
-  )
+  );
 }

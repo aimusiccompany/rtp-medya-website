@@ -5,21 +5,23 @@ export async function POST(request: Request) {
   try {
     const data = await request.json()
 
-    // SMTP ayarları
+    console.log("Form verisi alındı:", data)
+
+    // Nodemailer transporter
     const transporter = nodemailer.createTransport({
-      host: "mail.rtpmedya.com.tr",
-      port: 587,
-      secure: false, // 587 için TLS kullanıyoruz
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      secure: false, // 587 için TLS
       auth: {
-        user: "info@rtpmedya.com.tr",
-        pass: "InfoRtp150305.!",
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
       },
     })
 
     // Mail gönderimi
     await transporter.sendMail({
-      from: `"RTP Medya" <info@rtpmedya.com.tr>`,
-      to: "info@rtpmedya.com.tr", // mailin size gelmesini istediğiniz adres
+      from: `"RTP Medya" <${process.env.SMTP_USER}>`,
+      to: process.env.MAIL_TO,
       subject: `Yeni İletişim Mesajı: ${data.subject}`,
       html: `
         <h2>Yeni İletişim Formu</h2>
@@ -31,6 +33,8 @@ export async function POST(request: Request) {
         <p>${data.message}</p>
       `
     })
+
+    console.log("Mail başarıyla gönderildi ✅")
 
     return NextResponse.json({ success: true })
   } catch (error) {

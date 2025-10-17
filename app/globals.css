@@ -156,7 +156,8 @@
 html {
   scroll-behavior: smooth;
   overflow-y: scroll; /* Sağ kaydırma her zaman görünür */
-  scrollbar-gutter: stable; /* Scroll çubuğu için yer ayır */
+  box-sizing: border-box;
+  width: 100%; /* 100vw yerine */
 }
 
 /* Mobile menu */

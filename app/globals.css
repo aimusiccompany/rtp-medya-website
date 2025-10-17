@@ -122,12 +122,11 @@
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    overflow-y: scroll; /* her zaman scroll */
-    scrollbar-gutter: stable; /* scroll bar kaymasını önler */
+    /* overflow-y: scroll; => Kaldırıldı, tarayıcı otomatik açacak */
   }
 }
 
-/* HeroSection arka plan animasyonu */
+/* HeroSection arka plan animasyonu (minimal, silik kırmızı geçiş) */
 .hero-gradient {
   position: absolute;
   inset: 0;

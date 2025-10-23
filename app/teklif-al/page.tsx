@@ -20,6 +20,7 @@ export default function TeklifAlPage() {
     sector: "",
     service: "",
     message: "",
+    website: "", // 🪤 Honeypot alanı eklendi
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -50,6 +51,7 @@ export default function TeklifAlPage() {
           sector: "",
           service: "",
           message: "",
+          website: "",
         });
       } else {
         alert(`Hata: ${result.error}`);
@@ -85,6 +87,18 @@ export default function TeklifAlPage() {
             <Card className="border-2 hover:border-red-600/30 transition-colors shadow-xl">
               <CardContent className="p-8 md:p-12">
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  
+                  {/* 🪤 Honeypot alanı (gizli input) */}
+                  <input
+                    type="text"
+                    name="website"
+                    value={formData.website}
+                    onChange={handleChange}
+                    style={{ display: "none" }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="companyName">Firma Adı *</Label>

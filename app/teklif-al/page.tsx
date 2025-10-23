@@ -86,7 +86,7 @@ export default function TeklifAlPage() {
           <div className="max-w-4xl mx-auto">
             <Card className="border-2 hover:border-red-600/30 transition-colors shadow-xl">
               <CardContent className="p-8 md:p-12">
-                <h2 className="text-3xl font-bold mb-6">Teklif alın</h2>
+                <h2 className="text-3xl font-bold mb-6">Teklif Alın</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   
                   {/* 🕵️ Honeypot alanı (gizli input) */}

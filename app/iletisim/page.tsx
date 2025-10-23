@@ -172,7 +172,7 @@ export default function ContactPage() {
                           name="message"
                           value={formData.message}
                           onChange={handleChange}
-                          placeholder="İşletmeniz ve aradığınız çözümler için detaylı bilgi veriniz."
+                          placeholder="İşletmeniz ve aradığınız çözümler için detaylı bilgi verin."
                           rows={8}
                           required
                           className="transition-all duration-300 focus:border-red-600"

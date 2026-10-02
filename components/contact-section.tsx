@@ -40,18 +40,17 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-background to-muted/30">
+    <section id="contact" className="py-24 md:py-32 rtp-wash-soft">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">İletişime Geçin</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
-            Projeleriniz için bizimle iletişime geçin, size en uygun çözümü sunalım
-          </p>
+        <div className="mb-14 max-w-3xl">
+          <p className="rtp-eyebrow mb-4">İletişim</p>
+          <h2 className="rtp-display text-brand-ink text-4xl md:text-6xl">Projenizi konuşalım.</h2>
+          <p className="mt-6 text-lg text-brand-muted">Bize ulaşın, size en uygun çözümü birlikte planlayalım.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 ">
           <div className="lg:col-span-2">
-            <Card className="border-2 hover:border-red-600/30 transition-colors">
+            <Card className="rounded-[1.75rem] border-brand-line shadow-none">
               <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -66,7 +65,7 @@ export function ContactSection() {
                         onChange={handleChange}
                         placeholder="Adınız ve soyadınız"
                         required
-                        className="transition-all duration-300 focus:border-red-600"
+                        className="focus-visible:border-brand"
                       />
                     </div>
                     <div>
@@ -81,7 +80,7 @@ export function ContactSection() {
                         onChange={handleChange}
                         placeholder="ornek@email.com"
                         required
-                        className="transition-all duration-300 focus:border-red-600"
+                        className="focus-visible:border-brand"
                       />
                     </div>
                   </div>
@@ -97,7 +96,7 @@ export function ContactSection() {
                       onChange={handleChange}
                       placeholder="+90 (5XX) XXX XX XX"
                       required
-                      className="transition-all duration-300 focus:border-red-600"
+                      className="focus-visible:border-brand"
                     />
                   </div>
                   <div>
@@ -112,13 +111,13 @@ export function ContactSection() {
                       placeholder="Projeniz hakkında detaylı bilgi verin..."
                       rows={6}
                       required
-                      className="transition-all duration-300 focus:border-red-600"
+                      className="focus-visible:border-brand"
                     />
                   </div>
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
+                    className="w-full bg-brand hover:bg-brand-hover text-white rounded-2xl h-12"
                   >
                     Mesaj Gönder
                   </Button>
@@ -128,11 +127,11 @@ export function ContactSection() {
           </div>
 
           <div className="space-y-6">
-            <Card className="border-2 hover:border-red-600/50 transition-all duration-300 hover:shadow-lg">
+            <Card className="rounded-[1.75rem] border-brand-line shadow-none">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-800 rounded-lg flex items-center justify-center flex-shrink-0 shadow-md">
-                    <MapPin className="text-white" size={24} />
+                  <div className="w-12 h-12 bg-brand-wash rounded-xl flex items-center justify-center flex-shrink-0">
+                    <MapPin className="text-brand" size={24} />
                   </div>
                   <div>
                     <h3 className="font-bold mb-2">Adres</h3>
@@ -148,11 +147,11 @@ export function ContactSection() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:border-red-600/50 transition-all duration-300 hover:shadow-lg">
+            <Card className="rounded-[1.75rem] border-brand-line shadow-none">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-800 rounded-lg flex items-center justify-center flex-shrink-0 shadow-md">
-                    <Phone className="text-white" size={24} />
+                  <div className="w-12 h-12 bg-brand-wash rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Phone className="text-brand" size={24} />
                   </div>
                   <div>
                     <h3 className="font-bold mb-2">Telefon</h3>
@@ -166,11 +165,11 @@ export function ContactSection() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:border-red-600/50 transition-all duration-300 hover:shadow-lg">
+            <Card className="rounded-[1.75rem] border-brand-line shadow-none">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-800 rounded-lg flex items-center justify-center flex-shrink-0 shadow-md">
-                    <Mail className="text-white" size={24} />
+                  <div className="w-12 h-12 bg-brand-wash rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Mail className="text-brand" size={24} />
                   </div>
                   <div>
                     <h3 className="font-bold mb-2">E-posta</h3>

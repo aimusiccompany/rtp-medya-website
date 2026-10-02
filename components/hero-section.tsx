@@ -1,65 +1,99 @@
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
 import Link from "next/link"
+import { ArrowRight } from "lucide-react"
+
+const stats = [
+  { value: "20+", label: "yıllık deneyim" },
+  { value: "500+", label: "mutlu müşteri" },
+  { value: "46.000+", label: "tamamlanan proje" },
+]
+
+const bars = [38, 70, 52, 92, 60, 78, 44, 86, 58, 72, 40, 64]
 
 export function HeroSection() {
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
-    >
-      {/* Arkaplan animasyonu */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Minimal kırmızı degrade arka plan */}
-        <div className="absolute inset-0 hero-gradient"></div>
-      </div>
+    <section id="home" className="rtp-hero-wash relative overflow-hidden pt-[72px]">
+      <div className="container mx-auto px-4 py-16 md:py-24">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+          <div>
+            <p className="rtp-eyebrow mb-6 flex items-center gap-3 animate-fade-in">
+              <span className="h-2.5 w-2.5 rounded-full bg-brand" />
+              20+ yıllık deneyim. Profesyonel yayın.
+            </p>
 
-      <div className="container mx-auto px-4 py-32 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-block mb-6 px-4 py-2 bg-gradient-to-r from-red-600/10 to-red-800/10 border border-red-600/20 rounded-full backdrop-blur-sm animate-fade-in">
-            <span className="text-red-600 font-semibold text-sm">Profesyonel Medya Çözümleri</span>
+            <h1 className="rtp-display text-brand-ink text-[2.9rem] sm:text-6xl lg:text-[5.2rem] animate-fade-in-up">
+              Markanızın sesini
+              <br />
+              biliyoruz.
+              <br />
+              <span className="text-brand">Duyurmasını da.</span>
+            </h1>
+
+            <p
+              className="mt-8 max-w-xl text-lg md:text-xl leading-relaxed text-brand-muted animate-fade-in-up"
+              style={{ animationDelay: "0.2s" }}
+            >
+              Yıllardır işletmelere özel kurumsal radyo ve profesyonel seslendirme hizmeti veriyoruz. Müzik, anons ve
+              ses kimliğiniz tek merkezden, kesintisiz yönetilir.
+            </p>
+
+            <div
+              className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-in-up"
+              style={{ animationDelay: "0.4s" }}
+            >
+              <Link
+                href="/teklif-al"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-brand px-7 py-4 text-base font-semibold text-white shadow-[0_14px_30px_-12px_rgba(200,16,26,0.6)] transition-colors hover:bg-brand-hover"
+              >
+                Ücretsiz teklif al
+                <ArrowRight size={18} />
+              </Link>
+              <Link
+                href="/player"
+                className="inline-flex items-center justify-center rounded-2xl border border-brand-line bg-white/85 px-7 py-4 text-base font-semibold text-brand-ink transition-colors hover:bg-white"
+              >
+                RTP Medya Player’ı keşfet
+              </Link>
+            </div>
+
+            <dl className="mt-14 grid max-w-xl grid-cols-3 gap-6 border-t border-brand-line pt-8">
+              {stats.map((s) => (
+                <div key={s.label}>
+                  <dt className="text-3xl md:text-4xl font-medium tracking-tight text-brand-ink">{s.value}</dt>
+                  <dd className="mt-1 text-sm text-brand-muted">{s.label}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance leading-tight animate-fade-in-up">
-            Markanızın{" "}
-            <span className="bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">Sesini</span>{" "}
-            Duyurun
-          </h1>
+          {/* Logodaki ses dalgasından esinlenen yayın kartı */}
+          <div className="relative animate-scale-in" style={{ animationDelay: "0.3s" }}>
+            <div className="rounded-[2rem] border border-brand-line bg-white/85 p-8 shadow-[0_40px_80px_-40px_rgba(138,28,28,0.45)] backdrop-blur-xl">
+              <div className="flex items-center justify-between">
+                <span className="rtp-eyebrow">Canlı yayın</span>
+                <span className="flex items-center gap-2 text-xs font-semibold text-brand">
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-brand" />
+                  7/24
+                </span>
+              </div>
 
-          <p
-            className="text-xl md:text-2xl text-muted-foreground mb-12 text-pretty max-w-3xl mx-auto leading-relaxed animate-fade-in-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            RTP Medya olarak, kurumsal radyo ve profesyonel seslendirme hizmetleriyle markanızı güçlendiriyoruz.
-          </p>
+              <div className="mt-8 flex h-40 items-end justify-between gap-2" aria-hidden="true">
+                {bars.map((h, i) => (
+                  <span
+                    key={i}
+                    className="rtp-eq-bar w-full rounded-full bg-gradient-to-t from-brand-ink via-[#7a1a1a] to-brand"
+                    style={{ height: `${h}%`, animationDelay: `${i * 0.12}s` }}
+                  />
+                ))}
+              </div>
 
-          <div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up"
-            style={{ animationDelay: "0.4s" }}
-          >
-            <Link href="#portfolio">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 text-white text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-              >
-                Hizmetlerimizi İncele
-                <ArrowRight className="ml-2" size={20} />
-              </Button>
-            </Link>
-            <Link href="#contact">
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-lg px-8 py-6 border-2 bg-transparent hover:bg-red-600/5 hover:border-red-600 transition-all duration-300"
-              >
-                İletişime Geç
-              </Button>
-            </Link>
+              <div className="mt-8 border-t border-brand-line pt-6">
+                <p className="text-2xl font-medium tracking-tight text-brand-ink">RTP Medya</p>
+                <p className="mt-1 text-sm text-brand-muted">İşletmenizin ses dünyası, tek merkezden.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   )
 }

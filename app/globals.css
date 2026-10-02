@@ -4,31 +4,39 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  /* RTP Medya marka renkleri (logodaki kırmızı → koyu kahve-siyah) */
+  --brand-action: #c8101a;
+  --brand-action-hover: #a30d15;
+  --brand-ink: #2b2321;
+  --brand-muted: #75655f;
+  --brand-line: #ecdcd9;
+  --brand-wash: #fbefee;
+
+  --background: #fffdfc;
+  --foreground: #2b2321;
+  --card: #ffffff;
+  --card-foreground: #2b2321;
+  --popover: #ffffff;
+  --popover-foreground: #2b2321;
+  --primary: #c8101a;
+  --primary-foreground: #ffffff;
+  --secondary: #f8eeec;
+  --secondary-foreground: #2b2321;
+  --muted: #f8eeec;
+  --muted-foreground: #75655f;
+  --accent: #fbe9e8;
+  --accent-foreground: #2b2321;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
+  --border: #ecdcd9;
+  --input: #e6d3cf;
+  --ring: #c8101a;
+  --chart-1: #c8101a;
+  --chart-2: #2b2321;
+  --chart-3: #8a1c1c;
+  --chart-4: #e5484d;
+  --chart-5: #75655f;
+  --radius: 0.75rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -75,8 +83,14 @@
 }
 
 @theme inline {
-  --font-sans: "Geist", "Geist Fallback";
-  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-brand: var(--brand-action);
+  --color-brand-hover: var(--brand-action-hover);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-line: var(--brand-line);
+  --color-brand-wash: var(--brand-wash);
+  --font-sans: var(--font-dm-sans), "DM Sans", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -134,7 +148,7 @@
   position: absolute;
   inset: 0;
   width: 100%;
-  background: linear-gradient(270deg, rgba(255,0,0,0.05), rgba(255,77,77,0.05), rgba(255,26,26,0.05), rgba(179,0,0,0.05));
+  background: linear-gradient(270deg, rgba(200,16,26,0.05), rgba(229,72,77,0.05), rgba(200,16,26,0.05), rgba(138,28,28,0.05));
   background-size: 400% 400%;
   animation: gradient-flow 20s ease infinite;
   pointer-events: none;
@@ -171,3 +185,20 @@ html {
 @media (max-width: 1024px) {
   .mobile-menu-open { position: fixed; top: 80px; left: 0; right: 0; background: var(--background); z-index: 40; }
 }
+
+/* ---- RTP Medya · AI Music formatı yardımcı sınıfları ---- */
+.rtp-display { letter-spacing: -0.045em; line-height: 0.98; font-weight: 500; }
+.rtp-eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brand-muted); }
+.rtp-hero-wash {
+  background:
+    radial-gradient(at 80% 28%, #f7c9c6 0, transparent 52%),
+    radial-gradient(at 12% 80%, #f3e3df 0, transparent 50%),
+    linear-gradient(115deg, #fffdfc, #fdf1ef 60%, #fbe7e4);
+}
+.rtp-wash-soft { background: linear-gradient(#fffdfc, #fbf1ef 55%, #fffdfc); }
+.rtp-wash-warm { background: linear-gradient(120deg, #fbefee, #f6efe9); }
+
+/* Ekolayzır çubukları (logodaki ses dalgası) */
+@keyframes rtp-eq { 0%,100% { transform: scaleY(0.35); } 50% { transform: scaleY(1); } }
+.rtp-eq-bar { transform-origin: bottom; animation: rtp-eq 1.2s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .rtp-eq-bar { animation: none; } }

@@ -1,11 +1,10 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { DM_Sans } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const dmSans = DM_Sans({ subsets: ["latin", "latin-ext"], variable: "--font-dm-sans" })
 
 export const metadata: Metadata = {
   title: "RTP Medya - Kurumsal Radyo Hizmeti",
@@ -26,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
-      <body className={`font-sans antialiased`}>
+      <body className={`${dmSans.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>

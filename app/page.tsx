@@ -7,6 +7,7 @@ import { SectorsSection } from "@/components/sectors-section"
 import { ProcessSection } from "@/components/process-section"
 import { AboutSection } from "@/components/about-section"
 import { ContactSection } from "@/components/contact-section"
+import { FaqSection } from "@/components/faq-section"
 import { CtaBand } from "@/components/cta-band"
 import { Marquee } from "@/components/fx/marquee"
 import { Footer } from "@/components/footer"
@@ -33,6 +34,7 @@ export default function Home() {
       <SectorsSection />
       <ProcessSection />
       <AboutSection />
+      <FaqSection />
       <CtaBand
         title="İşletmenizin sesini birlikte tasarlayalım."
         description="Ücretsiz teklif alın, size özel yayın planını hazırlayalım."

@@ -1,6 +1,8 @@
 import Link from "next/link"
 import type { Metadata } from "next"
 import { Mic, Video, Phone, Radio, Volume2, Users, ArrowRight } from "lucide-react"
+import { JsonLd } from "@/components/json-ld"
+import { breadcrumbLd, serviceLd } from "@/lib/site"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { PageHero } from "@/components/page-hero"
@@ -10,9 +12,11 @@ import { Reveal } from "@/components/fx/reveal"
 import { SpotlightCard } from "@/components/fx/spotlight-card"
 
 export const metadata: Metadata = {
-  title: "Profesyonel Seslendirme | RTP Medya",
+  title: "Profesyonel Seslendirme - Reklam, Santral ve Anons Seslendirme",
   description:
-    "Reklam, tanıtım, santral ve anons için geniş seslendirmen kadromuzla profesyonel seslendirme çözümleri.",
+    "Reklam, tanıtım filmi, telefon santrali ve mağaza anonsları için geniş seslendirmen kadrosu ve stüdyo kalitesinde kayıt. Hemen teklif alın.",
+  alternates: { canonical: "/hizmetler/profesyonel-seslendirme" },
+  openGraph: { url: "/hizmetler/profesyonel-seslendirme", title: "Profesyonel Seslendirme - Reklam, Santral ve Anons Seslendirme", description: "Reklam, tanıtım filmi, telefon santrali ve mağaza anonsları için geniş seslendirmen kadrosu ve stüdyo kalitesinde kayıt. Hemen teklif alın." },
 }
 
 const services = [
@@ -34,6 +38,7 @@ const steps = [
 export default function ProfesyonelSeslendirmePage() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={[breadcrumbLd([{ name: "Profesyonel Seslendirme", path: "/hizmetler/profesyonel-seslendirme" }]), serviceLd({ name: "Profesyonel Seslendirme", serviceType: "Reklam, santral ve anons seslendirme", description: "Geniş seslendirmen kadrosu ile stüdyo kalitesinde seslendirme.", path: "/hizmetler/profesyonel-seslendirme" })]} />
       <Header />
 
       <PageHero
@@ -55,13 +60,13 @@ export default function ProfesyonelSeslendirmePage() {
         <div className="container mx-auto px-4">
           <Reveal>
             <div className="neon-border glass mx-auto max-w-5xl rounded-[2rem] p-8 md:p-14">
-              <h2 className="font-display text-3xl text-white md:text-5xl">Profesyonel seslendirme hizmetimiz</h2>
-              <p className="mt-6 text-lg leading-relaxed text-white/60">
+              <h2 className="font-display text-3xl text-foreground md:text-5xl">Profesyonel seslendirme hizmetimiz</h2>
+              <p className="mt-6 text-lg leading-relaxed text-foreground/60">
                 Ses, markanızın kimliğinin en önemli parçalarından biridir. Doğru ses tonu ve karakter, mesajınızın
                 hedef kitlenize ulaşmasında kritik rol oynar. RTP Medya olarak, yılların deneyimi ve geniş seslendirmen
                 kadromuzla her türlü projenize uygun seslendirme çözümleri sunuyoruz.
               </p>
-              <p className="mt-5 text-lg leading-relaxed text-white/60">
+              <p className="mt-5 text-lg leading-relaxed text-foreground/60">
                 Profesyonel stüdyomuzda kayıt yapıyor, miks ve mastering süreçleriyle yüksek ses kalitesi sağlıyoruz.
                 Reklam filmlerinden kurumsal tanıtımlara, telefon santrallerinden mağaza içi anonslarına kadar geniş bir
                 yelpazede hizmet veriyoruz.
@@ -77,12 +82,12 @@ export default function ProfesyonelSeslendirmePage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {services.map((s, i) => (
               <Reveal key={s.title} delay={(i % 3) * 0.1}>
-                <SpotlightCard tilt className="h-full rounded-[1.75rem] p-8">
+                <SpotlightCard className="h-full rounded-[1.75rem] p-8">
                   <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-brand/30 bg-brand/10 text-brand-glow">
                     <s.icon size={26} />
                   </span>
-                  <h3 className="mt-6 text-xl font-semibold text-white">{s.title}</h3>
-                  <p className="mt-3 leading-relaxed text-white/55">{s.description}</p>
+                  <h3 className="mt-6 text-xl font-semibold text-foreground">{s.title}</h3>
+                  <p className="mt-3 leading-relaxed text-foreground/55">{s.description}</p>
                 </SpotlightCard>
               </Reveal>
             ))}
@@ -97,11 +102,11 @@ export default function ProfesyonelSeslendirmePage() {
             <div className="pointer-events-none absolute left-0 right-0 top-9 hidden h-px bg-gradient-to-r from-transparent via-brand/60 to-transparent md:block" />
             {steps.map((s, i) => (
               <Reveal key={s.title} delay={i * 0.12}>
-                <div className="relative z-10 flex h-[72px] w-[72px] items-center justify-center rounded-full border border-brand/40 bg-[#14090b] font-mono text-lg font-semibold text-brand-glow shadow-[0_0_40px_-8px_rgba(232,16,28,0.8)]">
+                <div className="relative z-10 flex h-[72px] w-[72px] items-center justify-center rounded-full border border-brand/40 bg-card font-mono text-lg font-semibold text-brand-glow shadow-[0_0_40px_-8px_rgba(232,16,28,0.8)]">
                   {String(i + 1).padStart(2, "0")}
                 </div>
-                <h3 className="mt-6 text-xl font-semibold text-white">{s.title}</h3>
-                <p className="mt-2 leading-relaxed text-white/50">{s.text}</p>
+                <h3 className="mt-6 text-xl font-semibold text-foreground">{s.title}</h3>
+                <p className="mt-2 leading-relaxed text-foreground/50">{s.text}</p>
               </Reveal>
             ))}
           </div>

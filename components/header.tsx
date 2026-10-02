@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { AnimatePresence, motion } from "framer-motion"
 import { Menu, X, ChevronDown } from "lucide-react"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 type NavItem = {
   label: string
@@ -66,15 +67,18 @@ export function Header() {
   return (
     <header className="fixed left-0 right-0 top-0 z-50 px-3 pt-3 md:px-6">
       <div
-        className={`mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 rounded-full border px-5 transition-all duration-500 ${
-          isScrolled
-            ? "border-white/[0.1] bg-[#0d080a]/75 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.9),0_0_40px_-20px_rgba(232,16,28,0.5)] backdrop-blur-2xl"
-            : "border-white/[0.06] bg-white/[0.02] backdrop-blur-md"
+        className={`mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 rounded-full border bg-header px-5 backdrop-blur-lg transition-shadow duration-300 ${
+          isScrolled ? "border-surface-border shadow-[0_14px_40px_-22px_rgba(43,35,33,0.45)]" : "border-surface-border"
         }`}
       >
-        <Link href="/" className="flex shrink-0 items-center" aria-label="RTP Medya ana sayfa">
+        {/* Orijinal logo; koyu temada okunabilirlik için açık bir zemin üzerinde durur */}
+        <Link
+          href="/"
+          className="flex shrink-0 items-center rounded-xl dark:bg-white dark:px-2.5 dark:py-1"
+          aria-label="RTP Medya ana sayfa"
+        >
           <div className="relative h-9 w-[88px]">
-            <Image src="/images/rtp-logo-light.png" alt="RTP Medya" fill className="object-contain object-left" priority />
+            <Image src="/images/rtp-logo.png" alt="RTP Medya" fill sizes="88px" className="object-contain object-left" priority />
           </div>
         </Link>
 
@@ -82,17 +86,17 @@ export function Header() {
           {navItems.map((item) =>
             item.dropdown ? (
               <div key={item.label} className="group relative">
-                <button className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-white/65 transition-colors group-hover:text-white">
+                <button className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-foreground/65 transition-colors group-hover:text-foreground">
                   {item.label}
                   <ChevronDown size={14} className="transition-transform duration-300 group-hover:rotate-180" />
                 </button>
                 <div className="invisible absolute left-1/2 top-full w-72 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
-                  <div className="rounded-2xl border border-white/[0.1] bg-[#110b0d]/95 p-2 shadow-2xl shadow-black/60 backdrop-blur-2xl">
+                  <div className="rounded-2xl border border-foreground/[0.1] bg-popover p-2 shadow-xl">
                     {item.dropdown.map((sub) => (
                       <Link
                         key={sub.href}
                         href={sub.href}
-                        className="block rounded-xl px-4 py-2.5 text-sm text-white/60 transition-colors hover:bg-brand/15 hover:text-white"
+                        className="block rounded-xl px-4 py-2.5 text-sm text-foreground/60 transition-colors hover:bg-brand/15 hover:text-foreground"
                       >
                         {sub.label}
                       </Link>
@@ -104,7 +108,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-full px-4 py-2 text-sm font-medium text-white/65 transition-colors hover:text-white"
+                className="rounded-full px-4 py-2 text-sm font-medium text-foreground/65 transition-colors hover:text-foreground"
               >
                 {item.label}
               </Link>
@@ -113,9 +117,10 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
+          <ThemeToggle />
           <Link
             href="/teklif-al"
-            className="rounded-full border border-white/[0.14] bg-white/[0.04] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:border-brand-glow/60 hover:bg-white/[0.09]"
+            className="rounded-full border border-surface-border bg-surface px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-brand"
           >
             Teklif iste
           </Link>
@@ -123,14 +128,18 @@ export function Header() {
             href={PANEL_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-gradient-to-r from-brand-hover to-brand px-5 py-2.5 text-sm font-semibold text-white shadow-[0_10px_30px_-10px_rgba(232,16,28,0.9)] transition-all hover:brightness-110"
+            className="rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-[0_10px_26px_-12px_var(--shadow-glow)] transition-colors hover:bg-brand-hover"
           >
             Panel ↗
           </a>
         </div>
 
+        <div className="flex items-center gap-3 lg:hidden">
+          <ThemeToggle />
+        </div>
+
         <button
-          className="text-white lg:hidden"
+          className="text-foreground lg:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label={isMobileMenuOpen ? "Menüyü kapat" : "Menüyü aç"}
           aria-expanded={isMobileMenuOpen}
@@ -146,7 +155,7 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-x-3 top-[84px] max-h-[calc(100vh-100px)] overflow-y-auto rounded-3xl border border-white/[0.1] bg-[#0d080a]/95 p-6 shadow-2xl backdrop-blur-2xl lg:hidden"
+            className="fixed inset-x-3 top-[84px] max-h-[calc(100vh-100px)] overflow-y-auto rounded-3xl border border-foreground/[0.1] bg-popover p-6 shadow-2xl lg:hidden"
           >
             <nav className="flex flex-col gap-4">
               {navItems.map((item) =>
@@ -154,7 +163,7 @@ export function Header() {
                   <div key={item.label}>
                     <button
                       onClick={() => setOpenMobileGroup(openMobileGroup === item.label ? null : item.label)}
-                      className="flex w-full items-center justify-between font-medium text-white"
+                      className="flex w-full items-center justify-between font-medium text-foreground"
                     >
                       {item.label}
                       <ChevronDown
@@ -163,12 +172,12 @@ export function Header() {
                       />
                     </button>
                     {openMobileGroup === item.label && (
-                      <div className="ml-4 mt-3 flex flex-col gap-2 border-l border-white/10 pl-4">
+                      <div className="ml-4 mt-3 flex flex-col gap-2 border-l border-foreground/10 pl-4">
                         {item.dropdown.map((sub) => (
                           <Link
                             key={sub.href}
                             href={sub.href}
-                            className="py-1 text-sm text-white/60 hover:text-white"
+                            className="py-1 text-sm text-foreground/60 hover:text-foreground"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
                             {sub.label}
@@ -181,7 +190,7 @@ export function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="font-medium text-white"
+                    className="font-medium text-foreground"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.label}

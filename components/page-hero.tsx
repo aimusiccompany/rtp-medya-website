@@ -30,13 +30,13 @@ export function PageHero({ eyebrow, title, accent, description, children }: Prop
           <Reveal>
             <p className="eyebrow mb-6">{eyebrow}</p>
           </Reveal>
-          <h1 className="font-display text-4xl text-white sm:text-6xl md:text-7xl">
+          <h1 className="font-display text-4xl text-foreground sm:text-6xl md:text-7xl">
             <WordReveal text={title} />
             {accent && <WordReveal text={accent} className="text-gradient-red" delay={0.25} />}
           </h1>
           {description && (
             <Reveal delay={0.35}>
-              <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-white/60 md:text-xl">{description}</p>
+              <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-foreground/60 md:text-xl">{description}</p>
             </Reveal>
           )}
           {children && (

@@ -62,19 +62,19 @@ export function ServicePageTemplate({
         <div className="container mx-auto px-4">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <Reveal x={-30} y={0}>
-              <div className="group relative overflow-hidden rounded-[2rem] border border-white/[0.1]">
-                <img
+              <div className="group relative overflow-hidden rounded-[2rem] border border-foreground/[0.1]">
+                <img loading="lazy" decoding="async"
                   src={image || "/placeholder.svg?height=400&width=600"}
                   alt={title}
                   className="h-[420px] w-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#09060a]/80 via-transparent to-brand/10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-brand/10" />
               </div>
             </Reveal>
             <Reveal x={30} y={0} delay={0.1}>
               <p className="eyebrow mb-5">Neden biz?</p>
-              <h2 className="font-display text-3xl text-white md:text-5xl">{whyTitle}</h2>
-              <div className="mt-6 space-y-4 text-lg leading-relaxed text-white/55">
+              <h2 className="font-display text-3xl text-foreground md:text-5xl">{whyTitle}</h2>
+              <div className="mt-6 space-y-4 text-lg leading-relaxed text-foreground/55">
                 {whyParagraphs.map((p) => (
                   <p key={p}>{p}</p>
                 ))}
@@ -93,7 +93,7 @@ export function ServicePageTemplate({
                 <SpotlightCard className="h-full rounded-2xl p-6">
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="mt-0.5 shrink-0 text-brand-glow" size={20} />
-                    <p className="text-sm leading-relaxed text-white/75">{feature}</p>
+                    <p className="text-sm leading-relaxed text-foreground/75">{feature}</p>
                   </div>
                 </SpotlightCard>
               </Reveal>
@@ -110,12 +110,12 @@ export function ServicePageTemplate({
               const Icon = icons[index % icons.length]
               return (
                 <Reveal key={benefit.title} delay={index * 0.1}>
-                  <SpotlightCard tilt className="h-full rounded-[1.75rem] p-8">
+                  <SpotlightCard className="h-full rounded-[1.75rem] p-8">
                     <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-brand/30 bg-brand/10 text-brand-glow">
                       <Icon size={26} />
                     </span>
-                    <h3 className="mt-6 text-xl font-semibold text-white">{benefit.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-white/55">{benefit.description}</p>
+                    <h3 className="mt-6 text-xl font-semibold text-foreground">{benefit.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-foreground/55">{benefit.description}</p>
                   </SpotlightCard>
                 </Reveal>
               )

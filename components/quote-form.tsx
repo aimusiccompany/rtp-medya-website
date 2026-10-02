@@ -36,7 +36,7 @@ const serviceOptions = [
   ["muzik-yayini", "Müzik Yayını"],
 ]
 
-const label = "mb-2 block text-sm font-medium text-white/70"
+const label = "mb-2 block text-sm font-medium text-foreground/70"
 
 export function QuoteForm() {
   const [formData, setFormData] = useState(empty)
@@ -139,12 +139,12 @@ export function QuoteForm() {
         />
       </div>
 
-      <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6">
-        <h3 className="flex items-center gap-2 font-semibold text-white">
+      <div className="rounded-2xl border border-foreground/[0.08] bg-foreground/[0.03] p-6">
+        <h3 className="flex items-center gap-2 font-semibold text-foreground">
           <CheckCircle2 className="text-brand-glow" size={20} />
           Teklif aldıktan sonra
         </h3>
-        <ul className="mt-3 space-y-2 text-sm text-white/55">
+        <ul className="mt-3 space-y-2 text-sm text-foreground/55">
           <li>24 saat içinde size geri dönüş yapacağız.</li>
           <li>İhtiyaçlarınıza özel çözüm sunacağız.</li>
           <li>Detaylı fiyat teklifi alacaksınız.</li>

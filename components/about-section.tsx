@@ -17,15 +17,15 @@ export function AboutSection() {
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <Reveal>
             <p className="eyebrow mb-5">Biz kimiz</p>
-            <h2 className="font-display text-4xl text-white md:text-6xl">
+            <h2 className="font-display text-4xl text-foreground md:text-6xl">
               Birlikte iyi <span className="text-gradient-red">bir ses çıkaralım.</span>
             </h2>
-            <p className="mt-8 text-lg leading-relaxed text-white/55">
+            <p className="mt-8 text-lg leading-relaxed text-foreground/55">
               2005 yılından bu yana medya sektöründe faaliyet gösteren RTP Medya, müşterilerine kaliteli görsel ve
               işitsel içerik üretimi hizmetleri sunuyor. Deneyimli ekibimiz ve güçlü altyapımızla kurumsal firmalardan
               bireysel sanatçılara geniş bir yelpazede hizmet veriyoruz.
             </p>
-            <p className="mt-5 text-lg leading-relaxed text-white/55">
+            <p className="mt-5 text-lg leading-relaxed text-foreground/55">
               Yaratıcılık, profesyonellik ve müşteri memnuniyeti odaklı çalışma prensiplerimizle her projede
               mükemmelliği hedefliyoruz.
             </p>
@@ -41,7 +41,7 @@ export function AboutSection() {
                   <p className="text-gradient mt-6 text-4xl font-semibold tracking-tight md:text-5xl">
                     <Counter value={s.value} />
                   </p>
-                  <p className="mt-1 text-sm text-white/50">{s.label}</p>
+                  <p className="mt-1 text-sm text-foreground/50">{s.label}</p>
                 </SpotlightCard>
               </Reveal>
             ))}

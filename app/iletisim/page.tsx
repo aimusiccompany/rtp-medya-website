@@ -1,4 +1,6 @@
 import type { Metadata } from "next"
+import { JsonLd } from "@/components/json-ld"
+import { breadcrumbLd, serviceLd } from "@/lib/site"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { PageHero } from "@/components/page-hero"
@@ -6,8 +8,11 @@ import { ContactSection } from "@/components/contact-section"
 import { Reveal } from "@/components/fx/reveal"
 
 export const metadata: Metadata = {
-  title: "İletişim | RTP Medya",
-  description: "Projeleriniz için bizimle iletişime geçin, size en uygun çözümü sunalım.",
+  title: "İletişim - RTP Medya Levent, İstanbul",
+  description:
+    "RTP Medya iletişim bilgileri: Esentepe Mah. Büyükdere Cad. Levent 199, Şişli / İstanbul. Telefon: +90 (212) 263 09 02. Hafta içi 09:00-17:30.",
+  alternates: { canonical: "/iletisim" },
+  openGraph: { url: "/iletisim", title: "İletişim - RTP Medya Levent, İstanbul", description: "RTP Medya iletişim bilgileri: Esentepe Mah. Büyükdere Cad. Levent 199, Şişli / İstanbul. Telefon: +90 (212) 263 09 02. Hafta içi 09:00-17:30." },
 }
 
 const MAP_QUERY = encodeURIComponent("Levent 199, Esentepe Mahallesi, Büyükdere Caddesi No:199, Şişli, İstanbul")
@@ -15,6 +20,7 @@ const MAP_QUERY = encodeURIComponent("Levent 199, Esentepe Mahallesi, Büyükder
 export default function ContactPage() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={[breadcrumbLd([{ name: "İletişim", path: "/iletisim" }])]} />
       <Header />
 
       <PageHero

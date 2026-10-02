@@ -1,7 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Facebook, Instagram, Twitter, Youtube, Linkedin } from "lucide-react"
-import { Equalizer } from "@/components/fx/equalizer"
 
 const socials = [
   { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/people/AI-Music/61565593201997/" },
@@ -11,23 +10,20 @@ const socials = [
   { icon: Linkedin, label: "LinkedIn", href: "https://tr.linkedin.com/company/rtp-medya" },
 ]
 
-const linkClass = "text-white/55 transition-colors hover:text-white"
+const linkClass = "text-foreground/55 transition-colors hover:text-foreground"
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/[0.08] bg-transparent">
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 opacity-30">
-        <Equalizer bars={96} className="h-full" />
-      </div>
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
-
+    <footer className="relative overflow-hidden border-t border-surface-border bg-card/40">
       <div className="container relative mx-auto px-4 py-20">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div>
-            <div className="relative mb-6 h-11 w-28">
-              <Image src="/images/rtp-logo-light.png" alt="RTP Medya" fill className="object-contain object-left" />
+            <div className="relative mb-6 inline-block rounded-xl dark:bg-white dark:px-3 dark:py-1.5">
+              <div className="relative h-11 w-28">
+                <Image src="/images/rtp-logo.png" alt="RTP Medya" fill sizes="112px" className="object-contain object-left" />
+              </div>
             </div>
-            <p className="max-w-xs text-sm leading-relaxed text-white/50">
+            <p className="max-w-xs text-sm leading-relaxed text-foreground/50">
               2005 yılından beri profesyonel medya çözümleriyle markanızın sesini duyuruyoruz.
             </p>
           </div>
@@ -84,7 +80,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.04] text-white/60 transition-all hover:border-brand-glow hover:bg-brand hover:text-white hover:shadow-[0_0_24px_rgba(232,16,28,0.7)]"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-foreground/[0.12] bg-foreground/[0.04] text-foreground/60 transition-all hover:border-brand hover:bg-brand hover:text-white hover:shadow-[0_0_24px_rgba(232,16,28,0.7)]"
                 >
                   <Icon size={17} />
                 </Link>
@@ -93,7 +89,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 border-t border-white/[0.08] pt-8 text-center text-sm text-white/40">
+        <div className="mt-16 border-t border-foreground/[0.08] pt-8 text-center text-sm text-foreground/40">
           <p>&copy; {new Date().getFullYear()} RTP Medya. Tüm hakları saklıdır.</p>
         </div>
       </div>

@@ -20,7 +20,7 @@ export const sectors: Sector[] = [
     title: "Restoran İçi Müzik Yayını",
     description:
       "Restoranınızın atmosferini doğru müziklerle zenginleştirin. Müşterilerinize unutulmaz bir yemek deneyimi sunun.",
-    image: "/elegant-restaurant-interior.png",
+    image: "/elegant-restaurant-interior.webp",
     features: [
       "Restoran konseptinize özel müzik seçimi",
       "Telif hakkı ödemesi gerektirmeyen lisanslı müzik",
@@ -56,7 +56,7 @@ export const sectors: Sector[] = [
     title: "Kafeterya İçi Müzik Yayını",
     description:
       "Kafeteryanızın atmosferini doğru müziklerle zenginleştirin. Müşterilerinize unutulmaz bir yemek deneyimi sunun.",
-    image: "/cafe-interior.jpg",
+    image: "/cafe-interior.webp",
     features: [
       "Kafeterya konseptinize özel müzik seçimi",
       "Telif hakkı ödemesi gerektirmeyen lisanslı müzik",
@@ -92,7 +92,7 @@ export const sectors: Sector[] = [
     title: "Mağaza İçi Müzik Yayını",
     description:
       "Mağazanızın atmosferini doğru müziklerle zenginleştirin ve müşteri deneyimini iyileştirerek satışlarınızı artırın.",
-    image: "/modern-retail-store-interior-with-customers-shoppi.jpg",
+    image: "/modern-retail-store-interior-with-customers-shoppi.webp",
     features: [
       "Mağaza konseptinize özel müzik seçimi",
       "Satışları artıran müzik stratejileri",
@@ -128,7 +128,7 @@ export const sectors: Sector[] = [
     title: "Market İçi Müzik Yayını",
     description:
       "Marketinizde alışveriş deneyimini iyileştiren, müşterilerin daha uzun süre kalmasını sağlayan profesyonel müzik yayını.",
-    image: "/market-interior.jpg",
+    image: "/market-interior.webp",
     features: [
       "Market konseptinize uygun müzik seçimi",
       "Alışveriş süresini uzatan müzik stratejileri",
@@ -159,7 +159,7 @@ export const sectors: Sector[] = [
     title: "AVM İçi Müzik Yayını",
     description:
       "Alışveriş merkezinizde ziyaretçilere unutulmaz bir deneyim sunan, marka kimliğinizi güçlendiren profesyonel müzik yayını.",
-    image: "/avm-interior.jpg",
+    image: "/avm-interior.webp",
     features: [
       "AVM konseptinize özel müzik programları",
       "Farklı katlar ve bölümler için özel müzikler",
@@ -190,7 +190,7 @@ export const sectors: Sector[] = [
     title: "Otel İçi Müzik Yayını",
     description:
       "Otelinizde misafirlerinize huzurlu ve konforlu bir konaklama deneyimi sunan profesyonel müzik yayını.",
-    image: "/hotel-lobby.jpg",
+    image: "/hotel-lobby.webp",
     features: [
       "Otel konseptinize özel müzik seçimi",
       "Lobi, restoran, spa gibi farklı alanlar için özel müzikler",
@@ -220,7 +220,7 @@ export const sectors: Sector[] = [
     slug: "gym-spa",
     title: "Gym & Spa İçi Müzik Yayını",
     description: "Spor salonunuz ve spa merkezinizde motivasyon ve rahatlama sağlayan profesyonel müzik yayını.",
-    image: "/gym-spa.jpg",
+    image: "/gym-spa.webp",
     features: [
       "Gym ve spa alanları için özel müzik programları",
       "Antrenman motivasyonu artıran enerjik müzikler",
@@ -251,7 +251,7 @@ export const sectors: Sector[] = [
     title: "Güzellik Merkezi İçi Müzik Yayını",
     description:
       "Güzellik merkezinizde müşterilerinize huzurlu ve rahatlatıcı bir deneyim sunan profesyonel müzik yayını.",
-    image: "/beauty-salon.jpg",
+    image: "/beauty-salon.webp",
     features: [
       "Güzellik merkezi konseptinize özel müzik seçimi",
       "Rahatlatıcı ve huzur veren müzik programları",
@@ -282,7 +282,7 @@ export const sectors: Sector[] = [
     title: "Hastane İçi Müzik Yayını",
     description:
       "Hastanenizde hasta ve ziyaretçilere huzurlu bir ortam sunan, stresi azaltan profesyonel müzik yayını.",
-    image: "/hospital-waiting.jpg",
+    image: "/hospital-waiting.webp",
     features: [
       "Hastane ortamına uygun sakinleştirici müzikler",
       "Farklı bölümler için özel müzik programları",
@@ -313,7 +313,7 @@ export const sectors: Sector[] = [
     title: "Akaryakıt İstasyonu Müzik Yayını",
     description:
       "Akaryakıt istasyonunuzda müşterilerinize keyifli bir deneyim sunan, marka bilinirliğinizi artıran profesyonel müzik yayını.",
-    image: "/gas-station.jpg",
+    image: "/gas-station.webp",
     features: [
       "Akaryakıt istasyonu konseptinize özel müzik",
       "Market alanı için uygun müzik programları",

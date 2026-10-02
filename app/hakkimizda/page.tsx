@@ -1,6 +1,8 @@
 import Link from "next/link"
 import type { Metadata } from "next"
 import { Users, Target, Award, TrendingUp, ArrowRight } from "lucide-react"
+import { JsonLd } from "@/components/json-ld"
+import { breadcrumbLd, serviceLd } from "@/lib/site"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { PageHero } from "@/components/page-hero"
@@ -11,9 +13,11 @@ import { SpotlightCard } from "@/components/fx/spotlight-card"
 import { Counter } from "@/components/fx/counter"
 
 export const metadata: Metadata = {
-  title: "Biz Kimiz | RTP Medya",
+  title: "Hakkımızda - 2005'ten Beri Kurumsal Ses ve Müzik Yayıncılığı",
   description:
-    "2005 yılından beri profesyonel ses ve müzik yayıncılığı alanında hizmet veren RTP Medya, kurumsal radyo ve seslendirme çözümleriyle sektörde öncü konumdadır.",
+    "RTP Medya, 2005 yılından beri kurumsal radyo ve seslendirme çözümleriyle işletmelere hizmet veriyor. Misyonumuz, vizyonumuz ve rakamlarla RTP Medya.",
+  alternates: { canonical: "/hakkimizda" },
+  openGraph: { url: "/hakkimizda", title: "Hakkımızda - 2005'ten Beri Kurumsal Ses ve Müzik Yayıncılığı", description: "RTP Medya, 2005 yılından beri kurumsal radyo ve seslendirme çözümleriyle işletmelere hizmet veriyor. Misyonumuz, vizyonumuz ve rakamlarla RTP Medya." },
 }
 
 const stats = [
@@ -44,6 +48,7 @@ const reasons = [
 export default function AboutPage() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={[breadcrumbLd([{ name: "Hakkımızda", path: "/hakkimizda" }])]} />
       <Header />
 
       <PageHero
@@ -69,12 +74,12 @@ export default function AboutPage() {
               },
             ].map((c, i) => (
               <Reveal key={c.title} delay={i * 0.12}>
-                <SpotlightCard tilt className="h-full rounded-[2rem] p-8 md:p-12">
+                <SpotlightCard className="h-full rounded-[2rem] p-8 md:p-12">
                   <span className="flex h-16 w-16 items-center justify-center rounded-2xl border border-brand/30 bg-brand/10 text-brand-glow">
                     <c.icon size={30} />
                   </span>
-                  <h2 className="font-display mt-8 text-3xl text-white md:text-4xl">{c.title}</h2>
-                  <p className="mt-4 text-lg leading-relaxed text-white/55">{c.text}</p>
+                  <h2 className="font-display mt-8 text-3xl text-foreground md:text-4xl">{c.title}</h2>
+                  <p className="mt-4 text-lg leading-relaxed text-foreground/55">{c.text}</p>
                 </SpotlightCard>
               </Reveal>
             ))}
@@ -96,7 +101,7 @@ export default function AboutPage() {
                   <p className="text-gradient text-4xl font-semibold tracking-tight md:text-5xl">
                     <Counter value={s.value} />
                   </p>
-                  <p className="mt-2 text-sm text-white/50">{s.label}</p>
+                  <p className="mt-2 text-sm text-foreground/50">{s.label}</p>
                 </SpotlightCard>
               </Reveal>
             ))}
@@ -114,12 +119,12 @@ export default function AboutPage() {
           <div className="grid gap-6 md:grid-cols-3">
             {reasons.map((r, i) => (
               <Reveal key={r.title} delay={i * 0.1}>
-                <SpotlightCard tilt className="h-full rounded-[1.75rem] p-8">
+                <SpotlightCard className="h-full rounded-[1.75rem] p-8">
                   <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-brand/30 bg-brand/10 text-brand-glow">
                     <r.icon size={26} />
                   </span>
-                  <h3 className="mt-6 text-xl font-semibold text-white">{r.title}</h3>
-                  <p className="mt-3 leading-relaxed text-white/55">{r.text}</p>
+                  <h3 className="mt-6 text-xl font-semibold text-foreground">{r.title}</h3>
+                  <p className="mt-3 leading-relaxed text-foreground/55">{r.text}</p>
                 </SpotlightCard>
               </Reveal>
             ))}

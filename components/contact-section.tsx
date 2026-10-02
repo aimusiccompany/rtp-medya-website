@@ -26,10 +26,10 @@ const info: InfoItem[] = [
     title: "Telefon",
     body: (
       <>
-        <a href="tel:+902122630902" className="block transition-colors hover:text-white">
+        <a href="tel:+902122630902" className="block transition-colors hover:text-foreground">
           +90 (212) 263 09 02
         </a>
-        <a href="tel:+905462630900" className="block transition-colors hover:text-white">
+        <a href="tel:+905462630900" className="block transition-colors hover:text-foreground">
           +90 (546) 263 09 00
         </a>
       </>
@@ -40,10 +40,10 @@ const info: InfoItem[] = [
     title: "E-posta",
     body: (
       <>
-        <a href="mailto:info@rtpmedya.com.tr" className="block transition-colors hover:text-white">
+        <a href="mailto:info@rtpmedya.com.tr" className="block transition-colors hover:text-foreground">
           info@rtpmedya.com.tr
         </a>
-        <a href="mailto:teknik@rtpmedya.com.tr" className="block transition-colors hover:text-white">
+        <a href="mailto:teknik@rtpmedya.com.tr" className="block transition-colors hover:text-foreground">
           teknik@rtpmedya.com.tr
         </a>
       </>
@@ -91,8 +91,8 @@ export function ContactSection({ showHeading = true }: { showHeading?: boolean }
                       <item.icon size={22} />
                     </span>
                     <div>
-                      <h3 className="mb-1.5 font-semibold text-white">{item.title}</h3>
-                      <div className="text-sm leading-relaxed text-white/55">{item.body}</div>
+                      <h3 className="mb-1.5 font-semibold text-foreground">{item.title}</h3>
+                      <div className="text-sm leading-relaxed text-foreground/55">{item.body}</div>
                     </div>
                   </div>
                 </SpotlightCard>

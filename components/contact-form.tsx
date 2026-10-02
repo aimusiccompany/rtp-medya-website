@@ -50,13 +50,13 @@ export function ContactForm() {
 
       <div className="grid gap-5 md:grid-cols-2">
         <div>
-          <label htmlFor="name" className="mb-2 block text-sm font-medium text-white/70">
+          <label htmlFor="name" className="mb-2 block text-sm font-medium text-foreground/70">
             Ad Soyad *
           </label>
           <input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Adınız ve soyadınız" required className="field" />
         </div>
         <div>
-          <label htmlFor="email" className="mb-2 block text-sm font-medium text-white/70">
+          <label htmlFor="email" className="mb-2 block text-sm font-medium text-foreground/70">
             E-posta *
           </label>
           <input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="ornek@email.com" required className="field" />
@@ -65,13 +65,13 @@ export function ContactForm() {
 
       <div className="grid gap-5 md:grid-cols-2">
         <div>
-          <label htmlFor="phone" className="mb-2 block text-sm font-medium text-white/70">
+          <label htmlFor="phone" className="mb-2 block text-sm font-medium text-foreground/70">
             Telefon *
           </label>
           <input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="+90 (5XX) XXX XX XX" required className="field" />
         </div>
         <div>
-          <label htmlFor="subject" className="mb-2 block text-sm font-medium text-white/70">
+          <label htmlFor="subject" className="mb-2 block text-sm font-medium text-foreground/70">
             Konu *
           </label>
           <input id="subject" name="subject" value={formData.subject} onChange={handleChange} placeholder="Mesaj konusu" required className="field" />
@@ -79,7 +79,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="mb-2 block text-sm font-medium text-white/70">
+        <label htmlFor="message" className="mb-2 block text-sm font-medium text-foreground/70">
           Mesajınız *
         </label>
         <textarea

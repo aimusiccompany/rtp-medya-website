@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 import { Download, Music, Radio, Clock, Wifi, Settings, Smartphone } from "lucide-react"
+import { JsonLd } from "@/components/json-ld"
+import { breadcrumbLd, serviceLd } from "@/lib/site"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { PageHero } from "@/components/page-hero"
@@ -9,9 +11,11 @@ import { Reveal } from "@/components/fx/reveal"
 import { SpotlightCard } from "@/components/fx/spotlight-card"
 
 export const metadata: Metadata = {
-  title: "RTP Medya Player | RTP Medya",
+  title: "RTP Medya Player - İşletme İçi Müzik Yayın Programı (Windows)",
   description:
-    "İşletmeniz için özel olarak tasarlanmış profesyonel müzik yayın platformu. Windows için indirin.",
+    "RTP Medya Player ile playlist, anons ve ses seviyesini şubelerinize göre zamanlayın ve yönetin. Windows için indirin.",
+  alternates: { canonical: "/player" },
+  openGraph: { url: "/player", title: "RTP Medya Player - İşletme İçi Müzik Yayın Programı (Windows)", description: "RTP Medya Player ile playlist, anons ve ses seviyesini şubelerinize göre zamanlayın ve yönetin. Windows için indirin." },
 }
 
 // GitHub Release üzerinden indirilecek dosya
@@ -47,6 +51,7 @@ const benefits = [
 export default function PlayerPage() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={[breadcrumbLd([{ name: "RTP Medya Player", path: "/player" }])]} />
       <Header />
 
       <PageHero
@@ -59,20 +64,20 @@ export default function PlayerPage() {
           <Download size={18} />
           Windows İçin İndir
         </a>
-        <p className="text-sm text-white/45">Windows 7 ve üzeri sürümlerle uyumludur.</p>
+        <p className="text-sm text-foreground/45">Windows 7 ve üzeri sürümlerle uyumludur.</p>
       </PageHero>
 
       <section className="pb-24 md:pb-32">
         <div className="container mx-auto px-4">
           <Reveal y={60}>
             <div className="relative mx-auto max-w-5xl" style={{ perspective: 1600 }}>
-              <div className="absolute -inset-6 rounded-[3rem] bg-brand/25 blur-3xl" />
+              <div className="absolute -inset-6 rounded-[3rem] bg-[radial-gradient(circle,rgba(217,15,28,0.22),transparent_68%)]" />
               <img
-                src="/rtp-player-interface-v2.png"
+                src="/rtp-player-interface-v2.webp"
                 alt="RTP Medya Player Arayüzü"
                 width={1200}
                 height={675}
-                className="relative h-auto w-full rounded-[1.5rem] border border-white/[0.12] shadow-[0_60px_120px_-40px_rgba(232,16,28,0.6)]"
+                className="relative h-auto w-full rounded-[1.5rem] border border-foreground/[0.12] shadow-[0_60px_120px_-40px_rgba(232,16,28,0.6)]"
               />
             </div>
           </Reveal>
@@ -89,12 +94,12 @@ export default function PlayerPage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {features.map((f, i) => (
               <Reveal key={f.title} delay={(i % 3) * 0.1}>
-                <SpotlightCard tilt className="h-full rounded-[1.75rem] p-8">
+                <SpotlightCard className="h-full rounded-[1.75rem] p-8">
                   <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-brand/30 bg-brand/10 text-brand-glow">
                     <f.icon size={26} />
                   </span>
-                  <h3 className="mt-6 text-xl font-semibold text-white">{f.title}</h3>
-                  <p className="mt-3 leading-relaxed text-white/55">{f.description}</p>
+                  <h3 className="mt-6 text-xl font-semibold text-foreground">{f.title}</h3>
+                  <p className="mt-3 leading-relaxed text-foreground/55">{f.description}</p>
                 </SpotlightCard>
               </Reveal>
             ))}
@@ -110,8 +115,8 @@ export default function PlayerPage() {
               <Reveal key={b.title} delay={i * 0.1}>
                 <SpotlightCard className="h-full rounded-[1.75rem] p-8">
                   <p className="font-mono text-sm text-brand-glow">{String(i + 1).padStart(2, "0")}</p>
-                  <h3 className="mt-4 text-2xl font-semibold text-white">{b.title}</h3>
-                  <p className="mt-3 leading-relaxed text-white/55">{b.description}</p>
+                  <h3 className="mt-4 text-2xl font-semibold text-foreground">{b.title}</h3>
+                  <p className="mt-3 leading-relaxed text-foreground/55">{b.description}</p>
                 </SpotlightCard>
               </Reveal>
             ))}

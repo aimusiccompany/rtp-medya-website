@@ -23,7 +23,7 @@ export function MusicSection() {
 
   return (
     <section id="music" className="relative py-28 md:py-40">
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/10 blur-[140px]" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(217,15,28,0.22),transparent_68%)]" />
       <div className="container relative mx-auto px-4">
         <SectionHeading eyebrow="Müzik dünyası" title="İşletmenizin" accent="ses dünyası." />
 
@@ -39,7 +39,7 @@ export function MusicSection() {
                       aria-selected={active === i}
                       onClick={() => setActive(i)}
                       className={`relative flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-left text-sm font-medium transition-colors ${
-                        active === i ? "text-white" : "text-white/50 hover:text-white/80"
+                        active === i ? "text-foreground" : "text-foreground/50 hover:text-foreground/80"
                       }`}
                     >
                       {active === i && (
@@ -50,7 +50,7 @@ export function MusicSection() {
                         />
                       )}
                       <span
-                        className={`relative h-2 w-2 rounded-full ${active === i ? "bg-brand-glow shadow-[0_0_12px_#ff3b47]" : "bg-white/20"}`}
+                        className={`relative h-2 w-2 rounded-full ${active === i ? "bg-brand" : "bg-foreground/20"}`}
                       />
                       <span className="relative">{x.name}</span>
                     </button>
@@ -65,22 +65,22 @@ export function MusicSection() {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={g.name}
-                  initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                  exit={{ opacity: 0, y: -12, filter: "blur(6px)" }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
                   transition={{ duration: 0.4 }}
                 >
                   <p className="font-mono text-xs uppercase tracking-[0.3em] text-brand-glow">
                     {String(active + 1).padStart(2, "0")} / {String(genres.length).padStart(2, "0")} · {g.bpm} BPM
                   </p>
-                  <h3 className="font-display mt-5 text-5xl text-white md:text-7xl">{g.name}</h3>
-                  <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/55">{g.text}</p>
+                  <h3 className="font-display mt-5 text-5xl text-foreground md:text-7xl">{g.name}</h3>
+                  <p className="mt-5 max-w-xl text-lg leading-relaxed text-foreground/55">{g.text}</p>
                 </motion.div>
               </AnimatePresence>
 
               <div>
-                <Equalizer key={active} bars={44} seed={active + 1} className="mt-10 h-24" />
-                <p className="mt-6 border-t border-white/[0.08] pt-5 text-sm text-white/40">
+                <Equalizer key={active} bars={32} seed={active + 1} className="mt-10 h-24" />
+                <p className="mt-6 border-t border-foreground/[0.08] pt-5 text-sm text-foreground/40">
                   Telif haklarına saygılı, lisanslı yayın. Kullanım kapsamı lisans sözleşmesinde yazılı olarak belirtilir.
                 </p>
               </div>

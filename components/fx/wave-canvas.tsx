@@ -3,8 +3,11 @@
 import { useEffect, useRef } from "react"
 
 /**
- * Logodaki ses dalgasından esinlenen, fareye tepki veren canlı dalga alanı.
- * Hareket azaltma tercihinde tek kare çizer; ekran dışındayken durur.
+ * Logodaki ses dalgasından esinlenen hafif dalga animasyonu.
+ * - 30 fps ile sınırlı, 6 çizgi, geniş adımlı örnekleme
+ * - Ekran dışında ve sekme arka plandayken durur
+ * - Hareket azaltma tercihinde tek kare çizer
+ * - Açık/koyu temaya göre renk ve karıştırma modu değişir
  */
 export function WaveCanvas({ className = "", intensity = 1 }: { className?: string; intensity?: number }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -12,92 +15,96 @@ export function WaveCanvas({ className = "", intensity = 1 }: { className?: stri
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
-    const ctx = canvas.getContext("2d")
+    const ctx = canvas.getContext("2d", { alpha: true })
     if (!ctx) return
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    const root = document.documentElement
+    let dark = root.classList.contains("dark")
     let w = 0,
       h = 0,
       raf = 0,
-      t = 0
-    let mx = 0.5,
-      my = 0.5,
-      smx = 0.5,
-      smy = 0.5
+      t = 0,
+      last = 0
     let visible = true
 
     const resize = () => {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2)
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5)
       w = canvas.clientWidth
       h = canvas.clientHeight
-      canvas.width = w * dpr
-      canvas.height = h * dpr
+      canvas.width = Math.round(w * dpr)
+      canvas.height = Math.round(h * dpr)
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
     }
 
-    const LINES = 9
-    const draw = () => {
-      smx += (mx - smx) * 0.05
-      smy += (my - smy) * 0.05
+    const LINES = 6
+    const render = () => {
       ctx.clearRect(0, 0, w, h)
-      ctx.globalCompositeOperation = "lighter"
+      ctx.globalCompositeOperation = dark ? "lighter" : "source-over"
       for (let i = 0; i < LINES; i++) {
         const p = i / (LINES - 1)
         const centered = 1 - Math.abs(p - 0.5) * 2
-        const baseY = h * (0.5 + (p - 0.5) * 0.55)
-        const amp = (h * 0.09 + h * 0.07 * smy) * intensity * (0.35 + centered * 0.65)
-        const alpha = 0.1 + centered * 0.38
+        const baseY = h * (0.5 + (p - 0.5) * 0.5)
+        const amp = h * 0.11 * intensity * (0.35 + centered * 0.65)
+        const alpha = (dark ? 0.12 : 0.1) + centered * (dark ? 0.36 : 0.3)
         const grad = ctx.createLinearGradient(0, 0, w, 0)
-        grad.addColorStop(0, "rgba(122,11,18,0)")
-        grad.addColorStop(0.3, `rgba(232,16,28,${alpha})`)
-        grad.addColorStop(Math.min(0.9, Math.max(0.35, 0.55 + (smx - 0.5) * 0.3)), `rgba(255,90,100,${alpha + 0.15})`)
-        grad.addColorStop(1, "rgba(122,11,18,0)")
+        grad.addColorStop(0, "rgba(217,15,28,0)")
+        grad.addColorStop(0.3, `rgba(217,15,28,${alpha})`)
+        grad.addColorStop(0.6, `rgba(255,85,96,${alpha + 0.1})`)
+        grad.addColorStop(1, "rgba(217,15,28,0)")
         ctx.strokeStyle = grad
-        ctx.lineWidth = 1.2 + centered * 1.4
+        ctx.lineWidth = 1.2 + centered * 1.2
         ctx.beginPath()
-        for (let x = 0; x <= w; x += 6) {
+        for (let x = 0; x <= w; x += 12) {
           const nx = x / w
-          const envelope = Math.sin(nx * Math.PI)
+          const env = Math.sin(nx * Math.PI)
           const y =
             baseY +
-            Math.sin(nx * 7 + t * 0.9 + i * 0.55) * amp * envelope +
-            Math.sin(nx * 14 - t * 1.3 + i) * amp * 0.35 * envelope +
-            Math.sin(nx * 3 + t * 0.4 + smx * 4) * amp * 0.5
+            Math.sin(nx * 7 + t * 0.9 + i * 0.55) * amp * env +
+            Math.sin(nx * 14 - t * 1.3 + i) * amp * 0.3 * env
           if (x === 0) ctx.moveTo(x, y)
           else ctx.lineTo(x, y)
         }
         ctx.stroke()
       }
       ctx.globalCompositeOperation = "source-over"
-      t += 0.016
-      if (!reduce && visible) raf = requestAnimationFrame(draw)
     }
 
-    const onMove = (e: MouseEvent) => {
-      const r = canvas.getBoundingClientRect()
-      mx = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width))
-      my = Math.min(1, Math.max(0, (e.clientY - r.top) / r.height))
+    const loop = (now: number) => {
+      raf = requestAnimationFrame(loop)
+      if (now - last < 33) return // ~30 fps
+      last = now
+      t += 0.033
+      render()
+    }
+    const start = () => {
+      cancelAnimationFrame(raf)
+      if (!reduce && visible && !document.hidden) raf = requestAnimationFrame(loop)
     }
 
-    const io = new IntersectionObserver(([entry]) => {
-      const was = visible
-      visible = entry.isIntersecting
-      if (visible && !was && !reduce) {
-        cancelAnimationFrame(raf)
-        raf = requestAnimationFrame(draw)
-      }
+    const io = new IntersectionObserver(([e]) => {
+      visible = e.isIntersecting
+      if (visible) start()
+      else cancelAnimationFrame(raf)
+    })
+    const mo = new MutationObserver(() => {
+      dark = root.classList.contains("dark")
+      render()
     })
 
     resize()
-    draw()
+    render()
+    start()
     io.observe(canvas)
+    mo.observe(root, { attributes: true, attributeFilter: ["class"] })
     window.addEventListener("resize", resize)
-    window.addEventListener("mousemove", onMove, { passive: true })
+    document.addEventListener("visibilitychange", start)
     return () => {
       cancelAnimationFrame(raf)
       io.disconnect()
+      mo.disconnect()
       window.removeEventListener("resize", resize)
-      window.removeEventListener("mousemove", onMove)
+      document.removeEventListener("visibilitychange", start)
     }
   }, [intensity])
 

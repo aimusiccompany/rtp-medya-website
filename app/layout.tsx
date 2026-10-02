@@ -1,21 +1,26 @@
 import type React from "react"
-import type { Metadata } from "next"
-import { DM_Sans } from "next/font/google"
+import type { Metadata, Viewport } from "next"
+import { Sora } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { ScrollProgress } from "@/components/fx/scroll-progress"
+import { CursorGlow } from "@/components/fx/cursor-glow"
 import "./globals.css"
 
-const dmSans = DM_Sans({ subsets: ["latin", "latin-ext"], variable: "--font-dm-sans" })
+const sora = Sora({ subsets: ["latin", "latin-ext"], variable: "--font-sora" })
 
 export const metadata: Metadata = {
-  title: "RTP Medya - Kurumsal Radyo Hizmeti",
+  title: "RTP Medya - Kurumsal Radyo ve Profesyonel Seslendirme",
   description:
-    "Kurumsal radyo, işletme içi anons, radyo hizmetleri ve dijital medya hizmetleri ile markanızı bir adım öne taşıyoruz.",
-  generator: "v0.app",
+    "Kurumsal radyo, işletme içi müzik yayını, anons ve profesyonel seslendirme hizmetleriyle markanızın sesini duyuruyoruz.",
   icons: {
-    icon: "/favicon.ico",       // Tarayıcı sekmesindeki ana ikon
-    shortcut: "/favicon.ico",   // Kısayol ve pinned tab için
-    apple: "/apple-touch-icon.png", // iOS cihazlar için (isteğe bağlı)
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: "#09060a",
 }
 
 export default function RootLayout({
@@ -24,8 +29,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="tr">
-      <body className={`${dmSans.variable} font-sans antialiased`}>
+    <html lang="tr" className="dark">
+      <body className={`${sora.variable} font-sans antialiased`}>
+        <ScrollProgress />
+        <CursorGlow />
         {children}
         <Analytics />
       </body>

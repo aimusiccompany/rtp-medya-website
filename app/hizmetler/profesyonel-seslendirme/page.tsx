@@ -1,182 +1,119 @@
-"use client"  // <<--- BU ÇOK ÖNEMLİ
-
+import Link from "next/link"
+import type { Metadata } from "next"
+import { Mic, Video, Phone, Radio, Volume2, Users, ArrowRight } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Mic, Video, Phone, Radio, Volume2, Users } from "lucide-react"
+import { PageHero } from "@/components/page-hero"
+import { CtaBand } from "@/components/cta-band"
+import { SectionHeading } from "@/components/section-heading"
+import { Reveal } from "@/components/fx/reveal"
+import { SpotlightCard } from "@/components/fx/spotlight-card"
+
+export const metadata: Metadata = {
+  title: "Profesyonel Seslendirme | RTP Medya",
+  description:
+    "Reklam, tanıtım, santral ve anons için geniş seslendirmen kadromuzla profesyonel seslendirme çözümleri.",
+}
+
+const services = [
+  { icon: Video, title: "Reklam Seslendirme", description: "TV ve radyo reklamları için profesyonel ses sanatçıları" },
+  { icon: Phone, title: "Santral Seslendirme", description: "Kurumsal telefon santralleriniz için özel sesler" },
+  { icon: Radio, title: "Anons & Jingle", description: "Mağaza içi anonslar ve akılda kalıcı jingle'lar" },
+  { icon: Volume2, title: "Tanıtım Filmi", description: "Kurumsal tanıtım videoları için seslendirme" },
+  { icon: Users, title: "Geniş Seslendirmen Kadrosu", description: "Farklı ton ve karakterde profesyonel sesler" },
+  { icon: Mic, title: "Stüdyo Kalitesi", description: "Profesyonel kayıt ekipmanları ve akustik ortam" },
+]
+
+const steps = [
+  { title: "Proje Brifingi", text: "İhtiyacınızı, hedef kitlenizi ve kullanım alanını netleştiririz." },
+  { title: "Seslendirmen Seçimi", text: "Markanızın tonuna en uygun ses ve karakteri birlikte belirleriz." },
+  { title: "Kayıt & Prodüksiyon", text: "Stüdyoda kayıt yapılır; miks ve mastering ile ses cilalanır." },
+  { title: "Teslimat", text: "Kullanacağınız mecraya uygun formatlarda hızlıca teslim edilir." },
+]
 
 export default function ProfesyonelSeslendirmePage() {
-  const services = [
-    {
-      icon: Video,
-      title: "Reklam Seslendirme",
-      description: "TV ve radyo reklamları için profesyonel ses sanatçıları",
-    },
-    {
-      icon: Phone,
-      title: "Santral Seslendirme",
-      description: "Kurumsal telefon santralleriniz için özel sesler",
-    },
-    {
-      icon: Radio,
-      title: "Anons & Jingle",
-      description: "Mağaza içi anonslar ve akılda kalıcı jingle'lar",
-    },
-    {
-      icon: Volume2,
-      title: "Tanıtım Filmi",
-      description: "Kurumsal tanıtım videoları için seslendirme",
-    },
-    {
-      icon: Users,
-      title: "Geniş Seslendirmen Kadrosu",
-      description: "Farklı ton ve karakterde profesyonel sesler",
-    },
-    {
-      icon: Mic,
-      title: "Stüdyo Kalitesi",
-      description: "Profesyonel kayıt ekipmanları ve akustik ortam",
-    },
-  ]
-
   return (
     <main className="min-h-screen">
       <Header />
 
-      <section className="pt-32 pb-20 bg-gradient-to-br from-background via-red-950/5 to-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-red-600/10 via-transparent to-red-800/10" />
+      <PageHero
+        eyebrow="Hizmetlerimiz"
+        title="Profesyonel"
+        accent="Seslendirme"
+        description="Markanıza ses verin! Reklam, tanıtım, santral ve anons için geniş seslendirmen kadromuzla her türlü projenize profesyonel çözümler sunuyoruz."
+      >
+        <Link href="/teklif-al" className="btn-primary">
+          Teklif alın
+          <ArrowRight size={18} />
+        </Link>
+        <Link href="/iletisim" className="btn-ghost">
+          İletişime geç
+        </Link>
+      </PageHero>
 
-        <div className="container mx-auto px-4 relative">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-block mb-6 px-4 py-2 bg-gradient-to-r from-red-600/10 to-red-800/10 border border-red-600/20 rounded-full">
-              <span className="text-red-600 font-semibold text-sm">Hizmetlerimiz</span>
+      <section className="pb-24 md:pb-32">
+        <div className="container mx-auto px-4">
+          <Reveal>
+            <div className="neon-border glass mx-auto max-w-5xl rounded-[2rem] p-8 md:p-14">
+              <h2 className="font-display text-3xl text-white md:text-5xl">Profesyonel seslendirme hizmetimiz</h2>
+              <p className="mt-6 text-lg leading-relaxed text-white/60">
+                Ses, markanızın kimliğinin en önemli parçalarından biridir. Doğru ses tonu ve karakter, mesajınızın
+                hedef kitlenize ulaşmasında kritik rol oynar. RTP Medya olarak, yılların deneyimi ve geniş seslendirmen
+                kadromuzla her türlü projenize uygun seslendirme çözümleri sunuyoruz.
+              </p>
+              <p className="mt-5 text-lg leading-relaxed text-white/60">
+                Profesyonel stüdyomuzda kayıt yapıyor, miks ve mastering süreçleriyle yüksek ses kalitesi sağlıyoruz.
+                Reklam filmlerinden kurumsal tanıtımlara, telefon santrallerinden mağaza içi anonslarına kadar geniş bir
+                yelpazede hizmet veriyoruz.
+              </p>
             </div>
-
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
-              <span className="bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
-                Profesyonel Seslendirme
-              </span>
-            </h1>
-
-            <p className="text-xl text-muted-foreground mb-8 text-pretty leading-relaxed">
-              Markanıza ses verin! Reklam, tanıtım, santral ve anons için geniş seslendirmen kadromuzla her türlü
-              projenize profesyonel çözümler sunuyoruz.
-            </p>
-
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 text-white text-lg px-8 py-6 shadow-lg"
-              onClick={() => window.location.href = "/teklif-al"} 
-            >
-              Teklif Alın
-            </Button>
-          </div>
-
-          <div className="max-w-5xl mx-auto">
-            <Card className="border-2 border-red-600/20 bg-gradient-to-br from-background to-muted/50">
-              <CardContent className="p-12">
-                <h2 className="text-3xl font-bold mb-6">Profesyonel Seslendirme Hizmetimiz</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Ses, markanızın kimliğinin en önemli parçalarından biridir. Doğru ses tonu ve karakter, mesajınızın
-                  hedef kitlenize ulaşmasında kritik rol oynar. RTP Medya olarak, yılların deneyimi ve geniş
-                  seslendirmen kadromuzla her türlü projenize uygun seslendirme çözümleri sunuyoruz.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Profesyonel stüdyomuzda, en son teknoloji ekipmanlarla kayıt yapıyor, mixing ve mastering süreçleriyle
-                  mükemmel ses kalitesi sağlıyoruz. Reklam filmlerinden kurumsal tanıtımlara, telefon santrallerinden
-                  mağaza içi anonslarına kadar geniş bir yelpazede hizmet veriyoruz.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      {/* Hizmet Alanları */}
-      <section className="py-20 bg-muted/30">
+      <section className="pb-24 md:pb-32">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
-              Hizmet Alanlarımız
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Her türlü seslendirme ihtiyacınız için yanınızdayız
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {services.map((service, index) => (
-              <Card
-                key={index}
-                className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-2 hover:border-red-600/50"
-              >
-                <CardContent className="p-8">
-                  <div className="w-14 h-14 bg-gradient-to-br from-red-600 to-red-800 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <service.icon className="text-white" size={28} />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
-                </CardContent>
-              </Card>
+          <SectionHeading eyebrow="Hizmet alanlarımız" title="Her türlü seslendirme" accent="ihtiyacınız için." />
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {services.map((s, i) => (
+              <Reveal key={s.title} delay={(i % 3) * 0.1}>
+                <SpotlightCard tilt className="h-full rounded-[1.75rem] p-8">
+                  <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-brand/30 bg-brand/10 text-brand-glow">
+                    <s.icon size={26} />
+                  </span>
+                  <h3 className="mt-6 text-xl font-semibold text-white">{s.title}</h3>
+                  <p className="mt-3 leading-relaxed text-white/55">{s.description}</p>
+                </SpotlightCard>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Çalışma Süreci */}
-      <section className="py-20 bg-gradient-to-b from-background to-muted/30">
+      <section className="pb-24 md:pb-32">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
-              Çalışma Sürecimiz
-            </h2>
-
-            <div className="space-y-6">
-              {["Proje Brifingi", "Seslendirmen Seçimi", "Kayıt & Prodüksiyon", "Teslimat"].map(
-                (step, idx) => (
-                  <Card key={idx} className="border-2 hover:border-red-600/50 transition-all duration-300">
-                    <CardContent className="p-8">
-                      <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-800 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-xl">
-                          {idx + 1}
-                        </div>
-                        <div>
-                          <h3 className="text-2xl font-bold mb-3">{step}</h3>
-                          <p className="text-muted-foreground leading-relaxed text-lg">
-                            {/* Buraya açıklamalar eklenebilir */}
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                )
-              )}
-            </div>
+          <SectionHeading eyebrow="Çalışma sürecimiz" title="Brifingden" accent="teslimata." />
+          <div className="relative grid gap-6 md:grid-cols-4">
+            <div className="pointer-events-none absolute left-0 right-0 top-9 hidden h-px bg-gradient-to-r from-transparent via-brand/60 to-transparent md:block" />
+            {steps.map((s, i) => (
+              <Reveal key={s.title} delay={i * 0.12}>
+                <div className="relative z-10 flex h-[72px] w-[72px] items-center justify-center rounded-full border border-brand/40 bg-[#14090b] font-mono text-lg font-semibold text-brand-glow shadow-[0_0_40px_-8px_rgba(232,16,28,0.8)]">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <h3 className="mt-6 text-xl font-semibold text-white">{s.title}</h3>
+                <p className="mt-2 leading-relaxed text-white/50">{s.text}</p>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-red-600 to-red-800 text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Projenizi Konuşalım</h2>
-            <p className="text-xl mb-8 text-white/90 leading-relaxed">
-              Seslendirme ihtiyaçlarınız için bizimle iletişime geçin, size özel çözümler sunalım
-            </p>
-            <Button
-              size="lg"
-              variant="secondary"
-              className="text-lg px-8 py-6 bg-white text-red-600 hover:bg-gray-100"
-              onClick={() => window.location.href = "/iletisim"} 
-            >
-              İletişime Geç
-            </Button>
-          </div>
-        </div>
-      </section>
-
+      <CtaBand
+        title="Projenizi konuşalım."
+        description="Seslendirme ihtiyaçlarınız için bizimle iletişime geçin, size özel çözümler sunalım."
+        href="/iletisim"
+        label="İletişime geç"
+      />
       <Footer />
     </main>
   )

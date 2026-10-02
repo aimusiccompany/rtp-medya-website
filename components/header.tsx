@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { AnimatePresence, motion } from "framer-motion"
 import { Menu, X, ChevronDown } from "lucide-react"
 
 type NavItem = {
@@ -49,98 +50,111 @@ export function Header() {
   const [openMobileGroup, setOpenMobileGroup] = useState<string | null>(null)
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 8)
+    const handleScroll = () => setIsScrolled(window.scrollY > 12)
     handleScroll()
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-xl border-b transition-shadow duration-300 ${
-        isScrolled ? "border-brand-line shadow-[0_8px_30px_-16px_rgba(43,35,33,0.25)]" : "border-brand-line/60"
-      }`}
-    >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-[72px] gap-6">
-          <Link href="/" className="flex items-center shrink-0" aria-label="RTP Medya ana sayfa">
-            <div className="relative w-28 h-11">
-              <Image src="/images/rtp-logo.png" alt="RTP Medya" fill className="object-contain" priority />
-            </div>
-          </Link>
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : ""
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [isMobileMenuOpen])
 
-          <nav className="hidden lg:flex items-center gap-8" aria-label="Ana menü">
-            {navItems.map((item) =>
-              item.dropdown ? (
-                <div key={item.label} className="relative group">
-                  <button className="flex items-center gap-1 text-[15px] font-medium text-brand-muted group-hover:text-brand-ink transition-colors py-6">
-                    {item.label}
-                    <ChevronDown size={15} className="group-hover:rotate-180 transition-transform duration-300" />
-                  </button>
-                  <div className="absolute top-[calc(100%-12px)] left-0 w-72 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                    <div className="bg-white rounded-2xl shadow-xl border border-brand-line p-2">
-                      {item.dropdown.map((sub) => (
-                        <Link
-                          key={sub.href}
-                          href={sub.href}
-                          className="block px-4 py-2.5 rounded-xl text-sm text-brand-muted hover:text-brand-ink hover:bg-brand-wash transition-colors"
-                        >
-                          {sub.label}
-                        </Link>
-                      ))}
-                    </div>
+  return (
+    <header className="fixed left-0 right-0 top-0 z-50 px-3 pt-3 md:px-6">
+      <div
+        className={`mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 rounded-full border px-5 transition-all duration-500 ${
+          isScrolled
+            ? "border-white/[0.1] bg-[#0d080a]/75 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.9),0_0_40px_-20px_rgba(232,16,28,0.5)] backdrop-blur-2xl"
+            : "border-white/[0.06] bg-white/[0.02] backdrop-blur-md"
+        }`}
+      >
+        <Link href="/" className="flex shrink-0 items-center" aria-label="RTP Medya ana sayfa">
+          <div className="relative h-9 w-[88px]">
+            <Image src="/images/rtp-logo-light.png" alt="RTP Medya" fill className="object-contain object-left" priority />
+          </div>
+        </Link>
+
+        <nav className="hidden items-center gap-1 lg:flex" aria-label="Ana menü">
+          {navItems.map((item) =>
+            item.dropdown ? (
+              <div key={item.label} className="group relative">
+                <button className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-white/65 transition-colors group-hover:text-white">
+                  {item.label}
+                  <ChevronDown size={14} className="transition-transform duration-300 group-hover:rotate-180" />
+                </button>
+                <div className="invisible absolute left-1/2 top-full w-72 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                  <div className="rounded-2xl border border-white/[0.1] bg-[#110b0d]/95 p-2 shadow-2xl shadow-black/60 backdrop-blur-2xl">
+                    {item.dropdown.map((sub) => (
+                      <Link
+                        key={sub.href}
+                        href={sub.href}
+                        className="block rounded-xl px-4 py-2.5 text-sm text-white/60 transition-colors hover:bg-brand/15 hover:text-white"
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
                   </div>
                 </div>
-              ) : (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-[15px] font-medium text-brand-muted hover:text-brand-ink transition-colors"
-                >
-                  {item.label}
-                </Link>
-              ),
-            )}
-          </nav>
+              </div>
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-full px-4 py-2 text-sm font-medium text-white/65 transition-colors hover:text-white"
+              >
+                {item.label}
+              </Link>
+            ),
+          )}
+        </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
-            <Link
-              href="/teklif-al"
-              className="rounded-[10px] bg-brand-wash px-4 py-2.5 text-sm font-semibold text-brand hover:bg-[#f7dedc] transition-colors"
-            >
-              Teklif iste
-            </Link>
-            <a
-              href={PANEL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-[10px] bg-brand px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-hover transition-colors"
-            >
-              Panel ↗
-            </a>
-          </div>
-
-          <button
-            className="lg:hidden text-brand-ink"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? "Menüyü kapat" : "Menüyü aç"}
-            aria-expanded={isMobileMenuOpen}
+        <div className="hidden items-center gap-2 lg:flex">
+          <Link
+            href="/teklif-al"
+            className="rounded-full border border-white/[0.14] bg-white/[0.04] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:border-brand-glow/60 hover:bg-white/[0.09]"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            Teklif iste
+          </Link>
+          <a
+            href={PANEL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-gradient-to-r from-brand-hover to-brand px-5 py-2.5 text-sm font-semibold text-white shadow-[0_10px_30px_-10px_rgba(232,16,28,0.9)] transition-all hover:brightness-110"
+          >
+            Panel ↗
+          </a>
         </div>
+
+        <button
+          className="text-white lg:hidden"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? "Menüyü kapat" : "Menüyü aç"}
+          aria-expanded={isMobileMenuOpen}
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
 
-      {isMobileMenuOpen && (
-        <div className="lg:hidden fixed left-0 right-0 top-[72px] bg-white border-t border-brand-line shadow-2xl max-h-[calc(100vh-72px)] overflow-y-auto">
-          <div className="container mx-auto px-4 py-6">
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-x-3 top-[84px] max-h-[calc(100vh-100px)] overflow-y-auto rounded-3xl border border-white/[0.1] bg-[#0d080a]/95 p-6 shadow-2xl backdrop-blur-2xl lg:hidden"
+          >
             <nav className="flex flex-col gap-4">
               {navItems.map((item) =>
                 item.dropdown ? (
                   <div key={item.label}>
                     <button
                       onClick={() => setOpenMobileGroup(openMobileGroup === item.label ? null : item.label)}
-                      className="flex items-center justify-between w-full text-brand-ink font-medium"
+                      className="flex w-full items-center justify-between font-medium text-white"
                     >
                       {item.label}
                       <ChevronDown
@@ -149,12 +163,12 @@ export function Header() {
                       />
                     </button>
                     {openMobileGroup === item.label && (
-                      <div className="ml-4 mt-2 flex flex-col gap-2">
+                      <div className="ml-4 mt-3 flex flex-col gap-2 border-l border-white/10 pl-4">
                         {item.dropdown.map((sub) => (
                           <Link
                             key={sub.href}
                             href={sub.href}
-                            className="text-brand-muted hover:text-brand-ink text-sm py-1"
+                            className="py-1 text-sm text-white/60 hover:text-white"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
                             {sub.label}
@@ -167,32 +181,23 @@ export function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="text-brand-ink font-medium"
+                    className="font-medium text-white"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.label}
                   </Link>
                 ),
               )}
-              <Link
-                href="/teklif-al"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="mt-2 rounded-[10px] bg-brand-wash px-4 py-3 text-center font-semibold text-brand"
-              >
+              <Link href="/teklif-al" onClick={() => setIsMobileMenuOpen(false)} className="btn-ghost mt-2">
                 Teklif iste
               </Link>
-              <a
-                href={PANEL_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-[10px] bg-brand px-4 py-3 text-center font-semibold text-white"
-              >
+              <a href={PANEL_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
                 Panel ↗
               </a>
             </nav>
-          </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   )
 }

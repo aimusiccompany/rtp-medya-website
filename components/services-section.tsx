@@ -1,5 +1,8 @@
 import Link from "next/link"
 import { ArrowUpRight, Radio, Mic } from "lucide-react"
+import { Reveal } from "@/components/fx/reveal"
+import { SpotlightCard } from "@/components/fx/spotlight-card"
+import { SectionHeading } from "@/components/section-heading"
 
 const services = [
   {
@@ -26,50 +29,52 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-24 md:py-32">
+    <section id="services" className="relative py-28 md:py-40">
       <div className="container mx-auto px-4">
-        <div className="mb-14 max-w-3xl">
-          <p className="rtp-eyebrow mb-4">Hizmetlerimiz</p>
-          <h2 className="rtp-display text-brand-ink text-4xl md:text-6xl">
-            Her mekânda farklı bir hikâye. Her hikâyede bizim sesimiz.
-          </h2>
-        </div>
+        <SectionHeading
+          eyebrow="Hizmetlerimiz"
+          title="Her mekânda farklı bir hikâye."
+          accent="Her hikâyede bizim sesimiz."
+        />
 
         <div className="grid gap-8 md:grid-cols-2">
-          {services.map((s) => (
-            <Link
-              key={s.link}
-              href={s.link}
-              className="group overflow-hidden rounded-[2rem] border border-brand-line bg-white transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_40px_70px_-40px_rgba(138,28,28,0.5)]"
-            >
-              <div className="relative aspect-[16/10] overflow-hidden">
-                <img
-                  src={s.image}
-                  alt={s.eyebrow}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/70 via-transparent to-transparent" />
-                <span className="absolute left-5 top-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-white/90 text-brand">
-                  <s.icon size={22} />
-                </span>
-              </div>
-              <div className="p-8">
-                <p className="rtp-eyebrow mb-3 text-brand">{s.eyebrow}</p>
-                <h3 className="text-2xl md:text-3xl font-medium tracking-tight text-brand-ink">{s.title}</h3>
-                <p className="mt-4 leading-relaxed text-brand-muted">{s.description}</p>
-                <div className="mt-6 flex flex-wrap items-center gap-2">
-                  {s.tags.map((t) => (
-                    <span key={t} className="rounded-full bg-brand-wash px-3 py-1 text-xs font-semibold text-brand">
-                      {t}
+          {services.map((s, i) => (
+            <Reveal key={s.link} delay={i * 0.12}>
+              <Link href={s.link} className="group block h-full">
+                <SpotlightCard tilt className="h-full overflow-hidden rounded-[2rem]">
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <img
+                      src={s.image}
+                      alt={s.eyebrow}
+                      className="h-full w-full object-cover opacity-80 transition-all duration-700 group-hover:scale-110 group-hover:opacity-100"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#09060a] via-[#09060a]/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-brand/25 to-transparent mix-blend-overlay" />
+                    <span className="absolute left-6 top-6 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/20 bg-black/40 text-brand-glow backdrop-blur-md">
+                      <s.icon size={22} />
                     </span>
-                  ))}
-                  <ArrowUpRight
-                    size={22}
-                    className="ml-auto text-brand-muted transition-colors group-hover:text-brand"
-                  />
-                </div>
-              </div>
-            </Link>
+                  </div>
+                  <div className="relative p-8 md:p-10">
+                    <p className="eyebrow mb-4">{s.eyebrow}</p>
+                    <h3 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">{s.title}</h3>
+                    <p className="mt-4 leading-relaxed text-white/55">{s.description}</p>
+                    <div className="mt-8 flex flex-wrap items-center gap-2">
+                      {s.tags.map((t) => (
+                        <span
+                          key={t}
+                          className="rounded-full border border-white/[0.1] bg-white/[0.04] px-3 py-1 text-xs font-medium text-white/70"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                      <span className="ml-auto flex h-11 w-11 items-center justify-center rounded-full border border-white/[0.14] text-white/70 transition-all group-hover:border-brand-glow group-hover:bg-brand group-hover:text-white">
+                        <ArrowUpRight size={20} />
+                      </span>
+                    </div>
+                  </div>
+                </SpotlightCard>
+              </Link>
+            </Reveal>
           ))}
         </div>
       </div>

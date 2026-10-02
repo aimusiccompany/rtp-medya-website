@@ -67,6 +67,17 @@ export function Footer() {
                   İletişim
                 </Link>
               </li>
+              <li>
+                <a
+                  href="https://www.aimusic.com.tr/"
+                  target="_blank"
+                  rel="noopener"
+                  title="AI Music - yapay zekâ destekli işletme müziği"
+                  className={linkClass}
+                >
+                  AI Music ↗
+                </a>
+              </li>
             </ul>
           </div>
 

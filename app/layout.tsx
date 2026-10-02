@@ -71,6 +71,7 @@ const organizationLd = {
       telephone: SITE.phones[0],
       sameAs: SITE.sameAs,
       description: SITE.description,
+      brand: [{ "@type": "Brand", name: "AI Music", url: "https://www.aimusic.com.tr/" }],
     },
     {
       "@type": "LocalBusiness",

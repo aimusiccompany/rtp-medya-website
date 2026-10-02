@@ -9,6 +9,7 @@ import { AboutSection } from "@/components/about-section"
 import { ContactSection } from "@/components/contact-section"
 import { FaqSection } from "@/components/faq-section"
 import { CtaBand } from "@/components/cta-band"
+import { AiMusicBanner } from "@/components/ai-music-banner"
 import { Marquee } from "@/components/fx/marquee"
 import { Footer } from "@/components/footer"
 
@@ -34,6 +35,7 @@ export default function Home() {
       <SectorsSection />
       <ProcessSection />
       <AboutSection />
+      <AiMusicBanner />
       <FaqSection />
       <CtaBand
         title="İşletmenizin sesini birlikte tasarlayalım."

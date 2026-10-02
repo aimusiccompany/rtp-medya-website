@@ -72,7 +72,7 @@ export function Footer() {
                   href="https://www.aimusic.com.tr/"
                   target="_blank"
                   rel="noopener"
-                  title="AI Music - yapay zekâ destekli işletme müziği"
+                  title="AI Music - RTP Medya'nın 20. yılına özel yapay zekâ destekli müzik markası"
                   className={linkClass}
                 >
                   AI Music ↗

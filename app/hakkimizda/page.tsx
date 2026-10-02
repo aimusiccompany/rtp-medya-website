@@ -7,6 +7,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { PageHero } from "@/components/page-hero"
 import { CtaBand } from "@/components/cta-band"
+import { AiMusicBanner } from "@/components/ai-music-banner"
 import { SectionHeading } from "@/components/section-heading"
 import { Reveal } from "@/components/fx/reveal"
 import { SpotlightCard } from "@/components/fx/spotlight-card"
@@ -132,31 +133,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="pb-24 md:pb-32">
-        <div className="container mx-auto px-4">
-          <Reveal>
-            <SpotlightCard className="flex flex-col items-start justify-between gap-6 rounded-[2rem] p-8 md:flex-row md:items-center md:p-12">
-              <div className="max-w-2xl">
-                <p className="eyebrow mb-4">Yapay zekâ destekli müzik</p>
-                <h2 className="font-display text-3xl text-foreground md:text-4xl">AI Music</h2>
-                <p className="mt-4 leading-relaxed text-foreground/65">
-                  İşletme içi müzik yayınında yapay zekâ destekli yeni nesil çözümleri keşfetmek için AI Music’i
-                  inceleyebilirsiniz.
-                </p>
-              </div>
-              <a
-                href="https://www.aimusic.com.tr/"
-                target="_blank"
-                rel="noopener"
-                title="AI Music - yapay zekâ destekli işletme müziği"
-                className="btn-ghost shrink-0"
-              >
-                aimusic.com.tr ↗
-              </a>
-            </SpotlightCard>
-          </Reveal>
-        </div>
-      </section>
+      <AiMusicBanner />
 
       <CtaBand
         title="Birlikte çalışmaya hazır mısınız?"

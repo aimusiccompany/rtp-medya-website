@@ -47,11 +47,21 @@ const PANEL_URL = "https://panel.rtpmedya.com/"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [hidden, setHidden] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [openMobileGroup, setOpenMobileGroup] = useState<string | null>(null)
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 12)
+    let lastY = window.scrollY
+    const handleScroll = () => {
+      const y = window.scrollY
+      setIsScrolled(y > 12)
+      // Aşağı kaydırırken gizlen, yukarı çıkarken belir
+      if (Math.abs(y - lastY) > 8) {
+        setHidden(y > lastY && y > 240)
+        lastY = y
+      }
+    }
     handleScroll()
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
@@ -65,7 +75,11 @@ export function Header() {
   }, [isMobileMenuOpen])
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 px-3 pt-3 md:px-6">
+    <header
+      className={`fixed left-0 right-0 top-0 z-50 px-3 pt-3 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:px-6 ${
+        hidden && !isMobileMenuOpen ? "-translate-y-[120%]" : "translate-y-0"
+      }`}
+    >
       <div
         className={`mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 rounded-full border bg-header px-5 backdrop-blur-lg transition-shadow duration-300 ${
           isScrolled ? "border-surface-border shadow-[0_14px_40px_-22px_rgba(43,35,33,0.45)]" : "border-surface-border"

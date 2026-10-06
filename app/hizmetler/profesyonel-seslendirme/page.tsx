@@ -82,7 +82,7 @@ export default function ProfesyonelSeslendirmePage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {services.map((s, i) => (
               <Reveal key={s.title} delay={(i % 3) * 0.1}>
-                <SpotlightCard className="h-full rounded-[1.75rem] p-8">
+                <SpotlightCard tilt className="h-full rounded-[1.75rem] p-8">
                   <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-brand/30 bg-brand/10 text-brand-glow">
                     <s.icon size={26} />
                   </span>

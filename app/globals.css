@@ -237,7 +237,17 @@
   position: absolute;
   border-radius: 9999px;
 }
+@keyframes aurora-a {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(5vw, 4vw, 0) scale(1.12); }
+}
+@keyframes aurora-b {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1.05); }
+  50% { transform: translate3d(-5vw, 3vw, 0) scale(0.94); }
+}
 .aurora span:nth-child(1) {
+  animation: aurora-a 24s ease-in-out infinite;
+  will-change: transform;
   width: 55vw;
   height: 55vw;
   left: -15vw;
@@ -245,6 +255,8 @@
   background: radial-gradient(circle, rgba(217, 15, 28, 0.2), transparent 65%);
 }
 .aurora span:nth-child(2) {
+  animation: aurora-b 30s ease-in-out infinite;
+  will-change: transform;
   width: 45vw;
   height: 45vw;
   right: -12vw;
@@ -278,6 +290,32 @@
   mask-composite: exclude;
   pointer-events: none;
   z-index: 1;
+}
+
+/* Dönen ışık: yalnızca üzerine gelince veya .neon-live ile (boşta maliyet yok) */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 140deg;
+  inherits: false;
+}
+@keyframes neon-spin {
+  to { --angle: 500deg; }
+}
+.neon-border::before {
+  background: conic-gradient(from var(--angle), rgba(255, 85, 96, 0.75), transparent 28%, transparent 62%, rgba(217, 15, 28, 0.5));
+}
+.neon-border:hover::before,
+.neon-live::before {
+  animation: neon-spin 7s linear infinite;
+}
+
+/* Yüzen kart (yalnızca transform) */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.float-y {
+  animation: float-y 7s ease-in-out infinite;
 }
 
 /* Fare takip eden ışık (SpotlightCard) */

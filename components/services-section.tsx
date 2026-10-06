@@ -41,7 +41,7 @@ export function ServicesSection() {
           {services.map((s, i) => (
             <Reveal key={s.link} delay={i * 0.12}>
               <Link href={s.link} className="group block h-full">
-                <SpotlightCard className="h-full overflow-hidden rounded-[2rem]">
+                <SpotlightCard tilt className="h-full overflow-hidden rounded-[2rem]">
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <img loading="lazy" decoding="async"
                       src={s.image}

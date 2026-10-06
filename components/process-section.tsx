@@ -1,3 +1,6 @@
+"use client"
+
+import { motion } from "framer-motion"
 import { Reveal } from "@/components/fx/reveal"
 import { SectionHeading } from "@/components/section-heading"
 
@@ -15,7 +18,14 @@ export function ProcessSection() {
         <SectionHeading eyebrow="Nasıl çalışır?" title="Fikirden yayına." accent="Dört net adım." />
 
         <div className="relative grid gap-6 md:grid-cols-4">
-          <div className="pointer-events-none absolute left-0 right-0 top-9 hidden h-px bg-gradient-to-r from-transparent via-brand/60 to-transparent md:block" />
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+            style={{ transformOrigin: "left" }}
+            className="pointer-events-none absolute left-0 right-0 top-9 hidden h-px bg-gradient-to-r from-brand via-brand/50 to-transparent md:block"
+          />
           {steps.map((s, i) => (
             <Reveal key={s.n} delay={i * 0.12}>
               <div className="relative">

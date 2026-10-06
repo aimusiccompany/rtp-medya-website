@@ -6,7 +6,6 @@ import { motion } from "framer-motion"
 import { WaveCanvas } from "@/components/fx/wave-canvas"
 import { WordReveal } from "@/components/fx/reveal"
 import { Equalizer } from "@/components/fx/equalizer"
-import { Counter } from "@/components/fx/counter"
 
 const stats = [
   { value: "20+", label: "yıllık deneyim" },
@@ -79,14 +78,14 @@ export function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="mt-16 grid max-w-xl grid-cols-3 gap-6 border-t border-foreground/[0.1] pt-8"
+              className="mt-14 grid max-w-xl grid-cols-3 gap-3 border-t border-foreground/[0.1] pt-8 sm:gap-6"
             >
               {stats.map((s) => (
                 <div key={s.label}>
-                  <dt className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-                    <Counter value={s.value} />
+                  <dt className="whitespace-nowrap text-[1.4rem] font-semibold leading-none tracking-tight text-foreground sm:text-3xl md:text-4xl">
+                    {s.value}
                   </dt>
-                  <dd className="mt-1 text-xs text-foreground/45 md:text-sm">{s.label}</dd>
+                  <dd className="mt-2 text-xs leading-snug text-foreground/55 md:text-sm">{s.label}</dd>
                 </div>
               ))}
             </motion.dl>
@@ -97,9 +96,9 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative hidden lg:block"
+            className="float-y relative hidden lg:block"
           >
-            <div className="neon-border glass relative rounded-[2rem] p-7">
+            <div className="neon-border neon-live glass relative rounded-[2rem] p-7">
               <div className="flex items-center justify-between">
                 <span className="flex items-center gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-foreground/60">
                   <Radio size={14} className="text-brand-glow" />

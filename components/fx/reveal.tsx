@@ -15,10 +15,10 @@ type Props = {
 export function Reveal({ children, delay = 0, y = 28, x = 0, className }: Props) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: Math.min(y, 20), x: Math.min(x, 20) }}
-      whileInView={{ opacity: 1, y: 0, x: 0 }}
+      initial={{ opacity: 0, y: Math.min(y, 26), x: Math.min(x, 26), scale: 0.985 }}
+      whileInView={{ opacity: 1, y: 0, x: 0, scale: 1 }}
       viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.5, delay: Math.min(delay, 0.25), ease: "easeOut" }}
+      transition={{ duration: 0.65, delay: Math.min(delay, 0.3), ease: [0.22, 1, 0.36, 1] }}
       className={className}
     >
       {children}

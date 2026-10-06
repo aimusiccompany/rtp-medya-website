@@ -4,6 +4,7 @@ import { Sora } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import { ScrollProgress } from "@/components/fx/scroll-progress"
+import { CursorGlow } from "@/components/fx/cursor-glow"
 import { JsonLd } from "@/components/json-ld"
 import { SITE } from "@/lib/site"
 import "./globals.css"
@@ -119,6 +120,7 @@ export default function RootLayout({
       <body className={`${sora.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
           <ScrollProgress />
+          <CursorGlow />
           {children}
         </ThemeProvider>
         <JsonLd data={organizationLd} />

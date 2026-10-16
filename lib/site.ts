@@ -22,7 +22,7 @@ export const SITE = {
     "RTP Medya Player",
   ],
   email: "info@rtpmedya.com.tr",
-  phones: ["+902122630902", "+905462630900"],
+  phones: ["+902122630900", "+905462630902"],
   address: {
     street: "Esentepe Mah. Büyükdere Cad. Levent 199 No: 199 İçkapı No: 6",
     locality: "Şişli",

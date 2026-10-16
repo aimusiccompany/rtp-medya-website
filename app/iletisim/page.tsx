@@ -10,10 +10,10 @@ import { Reveal } from "@/components/fx/reveal"
 export const metadata: Metadata = {
   title: "İletişim - RTP Medya Levent, İstanbul",
   description:
-    "RTP Medya iletişim bilgileri: Esentepe Mah. Büyükdere Cad. Levent 199, Şişli / İstanbul. Telefon: +90 (212) 263 09 02. Hafta içi 09:00-17:30.",
+    "RTP Medya iletişim bilgileri: Esentepe Mah. Büyükdere Cad. Levent 199, Şişli / İstanbul. Telefon: +90 (212) 263 09 00. Hafta içi 09:00-17:30.",
   alternates: { canonical: "/iletisim" },
-  openGraph: { url: "/iletisim", title: "İletişim - RTP Medya Levent, İstanbul", description: "RTP Medya iletişim bilgileri: Esentepe Mah. Büyükdere Cad. Levent 199, Şişli / İstanbul. Telefon: +90 (212) 263 09 02. Hafta içi 09:00-17:30.", locale: "tr_TR", siteName: "RTP Medya", type: "website", images: ["/og-image.png"] },
-  twitter: { card: "summary_large_image", title: "İletişim - RTP Medya Levent, İstanbul", description: "RTP Medya iletişim bilgileri: Esentepe Mah. Büyükdere Cad. Levent 199, Şişli / İstanbul. Telefon: +90 (212) 263 09 02. Hafta içi 09:00-17:30.", images: ["/og-image.png"] },
+  openGraph: { url: "/iletisim", title: "İletişim - RTP Medya Levent, İstanbul", description: "RTP Medya iletişim bilgileri: Esentepe Mah. Büyükdere Cad. Levent 199, Şişli / İstanbul. Telefon: +90 (212) 263 09 00. Hafta içi 09:00-17:30.", locale: "tr_TR", siteName: "RTP Medya", type: "website", images: ["/og-image.png"] },
+  twitter: { card: "summary_large_image", title: "İletişim - RTP Medya Levent, İstanbul", description: "RTP Medya iletişim bilgileri: Esentepe Mah. Büyükdere Cad. Levent 199, Şişli / İstanbul. Telefon: +90 (212) 263 09 00. Hafta içi 09:00-17:30.", images: ["/og-image.png"] },
 }
 
 const MAP_QUERY = encodeURIComponent("Levent 199, Esentepe Mahallesi, Büyükdere Caddesi No:199, Şişli, İstanbul")

@@ -26,11 +26,11 @@ const info: InfoItem[] = [
     title: "Telefon",
     body: (
       <>
-        <a href="tel:+902122630902" className="block transition-colors hover:text-foreground">
-          +90 (212) 263 09 02
+        <a href="tel:+902122630900" className="block transition-colors hover:text-foreground">
+          +90 (212) 263 09 00
         </a>
-        <a href="tel:+905462630900" className="block transition-colors hover:text-foreground">
-          +90 (546) 263 09 00
+        <a href="tel:+905462630902" className="block transition-colors hover:text-foreground">
+          +90 (546) 263 09 02
         </a>
       </>
     ),

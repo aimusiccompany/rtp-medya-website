@@ -1,10 +1,6 @@
-"use client"
-
 import Link from "next/link"
-import { ArrowRight, Radio, Volume2, MapPin } from "lucide-react"
-import { motion } from "framer-motion"
+import { ArrowRight, ArrowUpRight, Radio, AudioLines, SlidersHorizontal, Check, Disc3 } from "lucide-react"
 import { WaveCanvas } from "@/components/fx/wave-canvas"
-import { WordReveal } from "@/components/fx/reveal"
 import { Equalizer } from "@/components/fx/equalizer"
 
 const stats = [
@@ -15,133 +11,51 @@ const stats = [
 
 export function HeroSection() {
   return (
-    <section id="home" className="relative isolate min-h-screen overflow-hidden pt-32 pb-20">
-      <div className="aurora">
-        <span />
-        <span />
-        <span />
-      </div>
-      <div className="bg-grid absolute inset-0 -z-10" />
-      <div className="absolute inset-0 -z-10">
-        <WaveCanvas />
-      </div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background to-transparent" />
-
+    <section id="home" className="hero-refined relative isolate overflow-hidden pt-36 pb-16 md:pt-44 md:pb-20">
+      <div className="aurora" aria-hidden="true"><span /><span /></div>
+      <div className="bg-grid absolute inset-0 -z-10 opacity-40" aria-hidden="true" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-72 opacity-30" aria-hidden="true"><WaveCanvas intensity={0.45} /></div>
       <div className="container relative mx-auto px-4">
-        <div className="grid items-center gap-16 lg:grid-cols-[1.2fr_0.8fr]">
+        <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
           <div>
-            <motion.p
-              initial={false}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="mb-8 inline-flex items-center gap-3 rounded-full border border-foreground/[0.1] bg-foreground/[0.04] px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/70"
-            >
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="ping-ring absolute inline-flex h-full w-full rounded-full bg-brand-glow" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-brand-glow" />
-              </span>
-              20+ yıl · Kesintisiz yayın
-            </motion.p>
-
-            <h1 className="font-display text-[2.6rem] text-foreground sm:text-6xl lg:text-[4.3rem] xl:text-[4.8rem]">
-              <WordReveal text="Kurumsal radyo ile" delay={0.05} />
-              <br />
-              <WordReveal text="markanızın sesini duyurun." className="text-gradient-red" delay={0.2} />
+            <p className="eyebrow mb-7">2005’ten beri markanızın sesi</p>
+            <h1 className="font-display max-w-[750px] text-[clamp(2.75rem,5.3vw,5rem)] leading-[1.08]">
+              Kurumsal radyo ile<br /><span className="text-gradient-red">markanızın sesini</span><br />duyurun.
             </h1>
-
-            <motion.p
-              initial={false}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-8 max-w-xl text-lg leading-relaxed text-foreground/60 md:text-xl"
-            >
-              2005’ten beri işletme içi müzik yayını, anons ve profesyonel seslendirme. Mağaza, restoran, otel ve AVM’niz için
-              lisanslı müzik ve ses kimliği tek merkezden, kesintisiz yönetilir.
-            </motion.p>
-
-            <motion.div
-              initial={false}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="mt-10 flex flex-col gap-4 sm:flex-row"
-            >
-              <Link href="/teklif-al" className="btn-primary">
-                Ücretsiz teklif al
-                <ArrowRight size={18} />
-              </Link>
-              <Link href="/player" className="btn-ghost">
-                RTP Medya Player’ı keşfet
-              </Link>
-            </motion.div>
-
-            <motion.dl
-              initial={false}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="mt-14 grid max-w-xl grid-cols-3 gap-3 border-t border-foreground/[0.1] pt-8 sm:gap-6"
-            >
-              {stats.map((s) => (
-                <div key={s.label}>
-                  <dt className="whitespace-nowrap text-[1.4rem] font-semibold leading-none tracking-tight text-foreground sm:text-3xl md:text-4xl">
-                    {s.value}
-                  </dt>
-                  <dd className="mt-2 text-xs leading-snug text-foreground/55 md:text-sm">{s.label}</dd>
-                </div>
-              ))}
-            </motion.dl>
+            <p className="mt-7 max-w-xl text-base leading-[1.85] text-foreground/65 md:text-lg">
+              Mekânınıza özel müzik, doğru zamanda anons, tek merkezden yönetim. İşletmenizin atmosferini birlikte tasarlayalım.
+            </p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Link href="/teklif-al" className="btn-primary">Ücretsiz teklif al <ArrowUpRight size={18} /></Link>
+              <Link href="/hizmetler/kurumsal-radyo" className="btn-ghost">Çözümleri keşfet <ArrowRight size={17} /></Link>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium text-foreground/60">
+              {["Lisanslı müzik", "Şubeye özel yayın", "Profesyonel destek"].map(text => <span key={text} className="flex items-center gap-1.5"><Check size={14} className="text-brand" />{text}</span>)}
+            </div>
           </div>
-
-          {/* Yüzen yayın paneli */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="float-y relative hidden lg:block"
-          >
-            <div className="neon-border neon-live glass relative rounded-[2rem] p-7">
-              <div className="flex items-center justify-between">
-                <span className="flex items-center gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-foreground/60">
-                  <Radio size={14} className="text-brand-glow" />
-                  Canlı yayın
-                </span>
-                <span className="rounded-full bg-brand/20 px-3 py-1 text-xs font-semibold text-brand-glow">7/24</span>
+          <div className="sound-stage relative mx-auto w-full max-w-[540px] lg:ml-auto">
+            <div className="absolute -inset-6 rounded-full bg-brand/10 blur-3xl" aria-hidden="true" />
+            <div className="sound-console relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#21191b] text-white shadow-[0_32px_90px_-30px_rgba(55,12,20,0.45)]">
+              <div className="flex items-center justify-between border-b border-white/10 px-6 py-5">
+                <span className="flex items-center gap-2.5 text-sm font-semibold"><AudioLines size={21} className="text-[#ff6872]" />RTP Medya</span>
+                <span className="text-[10px] uppercase tracking-[0.18em] text-white/45">Yayın dünyanız</span>
               </div>
-
-              <Equalizer bars={24} className="mt-8 h-36" />
-
-              <div className="mt-8 flex items-end justify-between border-t border-foreground/[0.08] pt-6">
-                <div>
-                  <p className="text-2xl font-semibold tracking-tight text-foreground">RTP Medya</p>
-                  <p className="mt-1 text-sm text-foreground/50">İşletmenizin ses dünyası</p>
+              <div className="p-6 md:p-8">
+                <div className="flex items-center justify-between"><span className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/50">Markanıza özel frekans</span><Radio size={18} className="text-[#ff6872]" /></div>
+                <div className="my-7 flex items-center gap-5">
+                  <div className="record-disc flex h-24 w-24 shrink-0 items-center justify-center rounded-full"><div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand"><Disc3 size={24} /></div></div>
+                  <div><p className="text-2xl font-semibold tracking-tight md:text-3xl">Sizin ritminiz.</p><p className="mt-2 text-sm text-white/50">Sizin mekânınız. Sizin sesiniz.</p><span className="mt-3 inline-block rounded-full border border-white/10 px-2.5 py-1 text-[10px] text-white/60">Müzik + anons + marka kimliği</span></div>
                 </div>
-                <Volume2 className="text-foreground/40" size={22} />
-              </div>
-
-              <div className="mt-6 grid grid-cols-2 gap-3">
-                <div className="rounded-2xl border border-foreground/[0.08] bg-foreground/[0.03] p-4">
-                  <MapPin size={16} className="text-brand-glow" />
-                  <p className="mt-2 text-xs text-foreground/45">Şube bazlı akış</p>
-                  <p className="text-sm font-semibold text-foreground">Tek merkezden</p>
-                </div>
-                <div className="rounded-2xl border border-foreground/[0.08] bg-foreground/[0.03] p-4">
-                  <Radio size={16} className="text-brand-glow" />
-                  <p className="mt-2 text-xs text-foreground/45">Müzik kütüphanesi</p>
-                  <p className="text-sm font-semibold text-foreground">%100 lisanslı</p>
-                </div>
+                <div className="rounded-2xl border border-white/[0.06] bg-black/15 px-5 py-5"><Equalizer bars={36} className="h-20" /><div className="mt-4 flex items-center justify-between text-[10px] tracking-wide text-white/40"><span>İŞLETMENİZİN SES DÜNYASI</span><span>7 / 24</span></div></div>
+                <div className="mt-5 flex items-center gap-3 rounded-xl border border-white/10 px-4 py-3"><SlidersHorizontal size={16} className="text-[#ff6872]" /><p className="text-xs text-white/65">Tüm şubeler. Tek bir merkez.</p><span className="ml-auto flex gap-1" aria-hidden="true">{[1,2,3].map(i=><span key={i} className="h-1.5 w-1.5 rounded-full bg-[#ff6872]" />)}</span></div>
               </div>
             </div>
-          </motion.div>
+            <div className="relative mx-5 -mt-1 flex items-center justify-between rounded-b-2xl border border-t-0 border-surface-border bg-card px-5 py-4"><span className="text-xs text-foreground/55">Müziğiniz her zaman yanınızda.</span><Link href="/player" className="inline-flex items-center gap-2 text-xs font-semibold text-brand-glow">Player’ı keşfet <ArrowUpRight size={15} /></Link></div>
+          </div>
         </div>
-      </div>
-
-      <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 md:block" aria-hidden="true">
-        <div className="flex h-10 w-6 justify-center rounded-full border border-foreground/25 pt-2">
-          <motion.span
-            animate={{ y: [0, 14, 0], opacity: [1, 0.2, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="h-2 w-1 rounded-full bg-brand-glow"
-          />
-        </div>
+        <dl className="mt-14 grid grid-cols-3 divide-x divide-foreground/10 border-t border-foreground/10 pt-7 md:mt-20 md:pt-9">
+          {stats.map((s,i)=><div key={s.label} className={i ? "pl-5 md:pl-10" : ""}><dt className="text-[clamp(1.5rem,3vw,2.6rem)] font-semibold leading-none tracking-tight">{s.value}</dt><dd className="mt-2 text-[11px] text-foreground/55 sm:text-sm">{s.label}</dd></div>)}
+        </dl>
       </div>
     </section>
   )

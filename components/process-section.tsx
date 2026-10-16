@@ -29,11 +29,11 @@ export function ProcessSection() {
           {steps.map((s, i) => (
             <Reveal key={s.n} delay={i * 0.12}>
               <div className="relative">
-                <div className="relative z-10 flex h-[72px] w-[72px] items-center justify-center rounded-full border border-brand/40 bg-card font-mono text-lg font-semibold text-brand-glow shadow-[0_0_40px_-8px_rgba(232,16,28,0.8)]">
+                <div className="relative z-10 flex h-[72px] w-[72px] items-center justify-center rounded-full border border-brand/40 bg-card font-mono text-lg font-semibold text-brand-glow shadow-sm">
                   {s.n}
                 </div>
                 <h3 className="mt-6 text-xl font-semibold text-foreground">{s.title}</h3>
-                <p className="mt-2 leading-relaxed text-foreground/50">{s.text}</p>
+                <p className="mt-2 leading-relaxed text-foreground/65">{s.text}</p>
               </div>
             </Reveal>
           ))}

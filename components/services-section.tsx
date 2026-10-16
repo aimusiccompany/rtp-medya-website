@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowUpRight, Radio, Mic } from "lucide-react"
 import { Reveal } from "@/components/fx/reveal"
 import { SpotlightCard } from "@/components/fx/spotlight-card"
@@ -11,7 +12,8 @@ const services = [
     title: "İşletmenize özel müzik yayını.",
     description:
       "Markanıza özel hazırlanan müzik seçkisi, anons ve kampanya duyurularıyla profesyonel yayın kalitesi. Tüm müzikler lisanslıdır.",
-    image: "/corporate-radio-broadcasting-studio.webp",
+    image: "/rtp-radio-studio-team.webp",
+    imageAlt: "Kurumsal radyo yayın stüdyosunda çalışan ekip — yapay zekâyla oluşturulmuş temsili görsel",
     tags: ["Lisanslı yayın", "Anons yönetimi", "Uzaktan kontrol"],
     link: "/hizmetler/kurumsal-radyo",
   },
@@ -21,7 +23,8 @@ const services = [
     title: "Markanızın sesi, doğru tonda.",
     description:
       "Reklam, tanıtım filmi, santral ve anons için geniş seslendirmen kadromuzla stüdyo kalitesinde ses kayıtları.",
-    image: "/professional-voice-recording-studio.webp",
+    image: "/rtp-voiceover-artist.webp",
+    imageAlt: "Profesyonel kayıt stüdyosunda seslendirme sanatçısı — yapay zekâyla oluşturulmuş temsili görsel",
     tags: ["Reklam", "Santral & IVR", "Tanıtım filmi"],
     link: "/hizmetler/profesyonel-seslendirme",
   },
@@ -33,8 +36,9 @@ export function ServicesSection() {
       <div className="container mx-auto px-4">
         <SectionHeading
           eyebrow="Hizmetlerimiz"
-          title="Her mekânda farklı bir hikâye."
-          accent="Her hikâyede bizim sesimiz."
+          title="Doğru müzik. Doğru ses."
+          accent="Tek bir çözüm ortağı."
+          description="Markanızın ses kimliğini, yayın teknolojisi ve profesyonel prodüksiyonla bir araya getiriyoruz."
         />
 
         <div className="grid gap-8 md:grid-cols-2">
@@ -42,22 +46,22 @@ export function ServicesSection() {
             <Reveal key={s.link} delay={i * 0.12}>
               <Link href={s.link} className="group block h-full">
                 <SpotlightCard tilt className="h-full overflow-hidden rounded-[2rem]">
-                  <div className="relative aspect-[16/10] overflow-hidden">
-                    <img loading="lazy" decoding="async"
+                  <div className="service-visual relative aspect-[16/8] overflow-hidden">
+                    <Image fill sizes="(max-width: 768px) 100vw, 50vw"
                       src={s.image}
-                      alt={s.eyebrow}
-                      className="h-full w-full object-cover opacity-80 transition-all duration-700 group-hover:scale-110 group-hover:opacity-100"
+                      alt={s.imageAlt}
+                      className="h-full w-full object-cover transition-all duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+
                     <div className="absolute inset-0 bg-gradient-to-br from-brand/25 to-transparent mix-blend-overlay" />
-                    <span className="absolute left-6 top-6 flex h-12 w-12 items-center justify-center rounded-2xl border border-foreground/20 bg-black/40 text-brand-glow">
+                    <span className="absolute left-6 top-6 flex h-12 w-12 items-center justify-center rounded-2xl border border-foreground/20 bg-black/30 text-white backdrop-blur-md">
                       <s.icon size={22} />
                     </span>
                   </div>
                   <div className="relative p-8 md:p-10">
                     <p className="eyebrow mb-4">{s.eyebrow}</p>
                     <h3 className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl">{s.title}</h3>
-                    <p className="mt-4 leading-relaxed text-foreground/55">{s.description}</p>
+                    <p className="mt-4 leading-relaxed text-foreground/65">{s.description}</p>
                     <div className="mt-8 flex flex-wrap items-center gap-2">
                       {s.tags.map((t) => (
                         <span

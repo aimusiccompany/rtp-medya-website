@@ -23,7 +23,7 @@ export function PlayerSection() {
                 <h2 className="font-display text-4xl text-foreground md:text-6xl">
                   Müziğin ritmi. <span className="text-gradient-red">Tek merkezden.</span>
                 </h2>
-                <p className="mt-6 max-w-lg text-lg leading-relaxed text-foreground/55">
+                <p className="mt-6 max-w-lg text-lg leading-relaxed text-foreground/65">
                   Müzik, anons ve ses seviyesi şubenize özel bir akışla yönetilir. Kurulumu kolay, kullanımı sade.
                 </p>
               </Reveal>
@@ -34,7 +34,7 @@ export function PlayerSection() {
                     <SpotlightCard className="h-full rounded-2xl p-5">
                       <f.icon className="text-brand-glow" size={22} />
                       <h3 className="mt-3 font-semibold text-foreground">{f.title}</h3>
-                      <p className="mt-1 text-sm leading-relaxed text-foreground/50">{f.text}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-foreground/65">{f.text}</p>
                     </SpotlightCard>
                   </Reveal>
                 ))}
@@ -54,7 +54,7 @@ export function PlayerSection() {
                 <img loading="lazy" decoding="async"
                   src="/rtp-player-interface-v2.webp"
                   alt="RTP Medya Player arayüzü"
-                  className="relative w-full rounded-[1.5rem] border border-foreground/[0.12] shadow-[0_50px_100px_-30px_rgba(232,16,28,0.55)] "
+                  className="relative w-full rounded-[1.5rem] border border-foreground/[0.12] shadow-[0_28px_65px_-25px_rgba(43,15,20,0.3)] "
                 />
               </div>
             </Reveal>

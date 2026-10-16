@@ -81,7 +81,7 @@ export function Header() {
       }`}
     >
       <div
-        className={`mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 rounded-full border bg-header px-5 backdrop-blur-lg transition-shadow duration-300 ${
+        className={`mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 rounded-2xl border bg-header px-5 backdrop-blur-lg transition-shadow duration-300 ${
           isScrolled ? "border-surface-border shadow-[0_14px_40px_-22px_rgba(43,35,33,0.45)]" : "border-surface-border"
         }`}
       >
@@ -100,7 +100,7 @@ export function Header() {
           {navItems.map((item) =>
             item.dropdown ? (
               <div key={item.label} className="group relative">
-                <button type="button" className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-foreground/65 transition-colors group-hover:text-foreground group-focus-within:text-foreground">
+                <button type="button" className="flex items-center gap-1 rounded-full px-3 py-2 text-[13px] font-medium text-foreground/65 transition-colors group-hover:text-foreground group-focus-within:text-foreground">
                   {item.label}
                   <ChevronDown size={14} className="transition-transform duration-300 group-hover:rotate-180" />
                 </button>
@@ -122,7 +122,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-full px-4 py-2 text-sm font-medium text-foreground/65 transition-colors hover:text-foreground"
+                className="rounded-full px-3 py-2 text-[13px] font-medium text-foreground/65 transition-colors hover:text-foreground"
               >
                 {item.label}
               </Link>

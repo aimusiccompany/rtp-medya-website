@@ -13,7 +13,7 @@
   --brand-glow: #d10d19; /* metin/vurgu kırmızısı (açık zeminde okunur) */
   --brand-deep: #7a0b12;
 
-  --background: #fffaf8;
+  --background: #fcf9f7;
   --foreground: #2b2321;
   --card: #ffffff;
   --card-foreground: #2b2321;
@@ -172,7 +172,7 @@
 ------------------------------------------------------------------- */
 .font-display {
   letter-spacing: -0.04em;
-  line-height: 1.02;
+  line-height: 1.1;
   font-weight: 600;
 }
 
@@ -454,3 +454,35 @@ select.field option {
     scroll-behavior: auto !important;
   }
 }
+
+/* Refined brand layout */
+.container { max-width: 1240px; }
+.record-disc {
+  background: repeating-radial-gradient(circle, #35282d 0px, #35282d 1px, #241b1e 2px, #241b1e 5px);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+.sound-console { background-image: radial-gradient(ellipse at 100% 0%, rgba(217,15,28,.18), transparent 60%); }
+.btn-primary, .btn-ghost { min-height: 50px; font-size: .875rem; }
+.btn-primary { box-shadow: 0 8px 22px -10px var(--shadow-glow); }
+.glass { box-shadow: 0 12px 40px -28px rgba(43,35,33,.22); }
+.neon-border::before { opacity: .45; }
+.aurora span:nth-child(1), .aurora span:nth-child(2) { opacity: .55; }
+.service-visual img { transition: transform .7s ease; }
+.service-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg,transparent 40%,rgba(18,8,10,.45)); pointer-events: none; }
+@media (min-width: 768px) {
+  main > section.py-28 { padding-top: 6rem; padding-bottom: 6rem; }
+}
+@media (max-width: 639px) {
+  .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .sound-stage { max-width: 440px; }
+  .sound-console .record-disc { width: 76px; height: 76px; }
+}
+
+.dark .text-gradient-red {
+  background-image: linear-gradient(100deg, #ff7b83, #ff5560 60%, #f23545);
+}
+
+.audio-range { height: 18px; accent-color: var(--brand-action); cursor: pointer; }
+.audio-range:disabled { opacity: .4; cursor: not-allowed; }
+.audio-range:focus-visible { outline: 2px solid var(--brand-action); outline-offset: 3px; border-radius: 4px; }

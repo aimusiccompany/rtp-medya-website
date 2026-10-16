@@ -1,0 +1,562 @@
+[
+  {
+    "id": "pop-01-adieu-l-ete",
+    "title": "Adieu l Ete",
+    "artist": "Adeie",
+    "genre": "Pop",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/pop/01-adieu-l-ete.mp3"
+  },
+  {
+    "id": "pop-02-cielo-sintetico",
+    "title": "Cielo Sintetico",
+    "artist": "Adriana Quintero",
+    "genre": "Pop",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/pop/02-cielo-sintetico.mp3"
+  },
+  {
+    "id": "pop-03-boulevard-pastel",
+    "title": "Boulevard Pastel",
+    "artist": "Agathe Vermeil",
+    "genre": "Pop",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/pop/03-boulevard-pastel.mp3"
+  },
+  {
+    "id": "pop-04-batti-le-mani",
+    "title": "Batti le Mani",
+    "artist": "Alessia Ferraro",
+    "genre": "Pop",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/pop/04-batti-le-mani.mp3"
+  },
+  {
+    "id": "pop-05-sous-les-paillettes",
+    "title": "Sous les Paillettes",
+    "artist": "Alice Perrin",
+    "genre": "Pop",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/pop/05-sous-les-paillettes.mp3"
+  },
+  {
+    "id": "pop-06-uptown-shuffle",
+    "title": "Uptown Shuffle",
+    "artist": "Brass Alley Union",
+    "genre": "Pop",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/pop/06-uptown-shuffle.mp3"
+  },
+  {
+    "id": "pop-07-turn-it-all-up",
+    "title": "Turn It All Up",
+    "artist": "Caleb Winslow",
+    "genre": "Pop",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/pop/07-turn-it-all-up.mp3"
+  },
+  {
+    "id": "pop-08-sogno-elettrico",
+    "title": "Sogno Elettrico",
+    "artist": "Camilla Rizzo",
+    "genre": "Pop",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/pop/08-sogno-elettrico.mp3"
+  },
+  {
+    "id": "pop-09-disco-sunlight",
+    "title": "Disco Sunlight",
+    "artist": "Cleo Marsh",
+    "genre": "Pop",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/pop/09-disco-sunlight.mp3"
+  },
+  {
+    "id": "pop-10-tarde-de-fiesta",
+    "title": "Tarde de Fiesta",
+    "artist": "Cumbia Solar",
+    "genre": "Pop",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/pop/10-tarde-de-fiesta.mp3"
+  },
+  {
+    "id": "deep-house-01-ciel-de-verre",
+    "title": "Ciel de Verre",
+    "artist": "Baptiste Reynaud",
+    "genre": "Deep House",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/deep-house/01-ciel-de-verre.mp3"
+  },
+  {
+    "id": "deep-house-02-luce-lontana",
+    "title": "Luce Lontana",
+    "artist": "Davide Corsini",
+    "genre": "Deep House",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/deep-house/02-luce-lontana.mp3"
+  },
+  {
+    "id": "deep-house-03-evening-current",
+    "title": "Evening Current",
+    "artist": "Elliot Warren",
+    "genre": "Deep House",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/deep-house/03-evening-current.mp3"
+  },
+  {
+    "id": "deep-house-04-raiz-del-viento",
+    "title": "Raiz del Viento",
+    "artist": "Emilio Duran",
+    "genre": "Deep House",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/deep-house/04-raiz-del-viento.mp3"
+  },
+  {
+    "id": "deep-house-05-battito-lento",
+    "title": "Battito Lento",
+    "artist": "Giorgia Salvi",
+    "genre": "Deep House",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/deep-house/05-battito-lento.mp3"
+  },
+  {
+    "id": "deep-house-06-passo-dourado",
+    "title": "Passo Dourado",
+    "artist": "Ines Cardoso",
+    "genre": "Deep House",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/deep-house/06-passo-dourado.mp3"
+  },
+  {
+    "id": "deep-house-07-arena-de-plata",
+    "title": "Arena de Plata",
+    "artist": "Lucia Serrano",
+    "genre": "Deep House",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/deep-house/07-arena-de-plata.mp3"
+  },
+  {
+    "id": "deep-house-08-onda-serena",
+    "title": "Onda Serena",
+    "artist": "Rafael Mendonca",
+    "genre": "Deep House",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/deep-house/08-onda-serena.mp3"
+  },
+  {
+    "id": "deep-house-09-coeur-de-neon",
+    "title": "Coeur de Neon",
+    "artist": "Sabine Deschamps",
+    "genre": "Deep House",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/deep-house/09-coeur-de-neon.mp3"
+  },
+  {
+    "id": "deep-house-10-bright-horizon",
+    "title": "Bright Horizon",
+    "artist": "Vicente Aguiar",
+    "genre": "Deep House",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/deep-house/10-bright-horizon.mp3"
+  },
+  {
+    "id": "bossa-nova-01-et-le-jour-se-repose",
+    "title": "Et le jour se repose",
+    "artist": "Anaïs Deschamps",
+    "genre": "Bossa Nova",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/bossa-nova/01-et-le-jour-se-repose.mp3"
+  },
+  {
+    "id": "bossa-nova-02-i-can-rest-my-eyes",
+    "title": "I Can Rest My Eyes",
+    "artist": "Caleb Vale",
+    "genre": "Bossa Nova",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/bossa-nova/02-i-can-rest-my-eyes.mp3"
+  },
+  {
+    "id": "bossa-nova-03-slowly-slowly",
+    "title": "Slowly Slowly",
+    "artist": "Delia Danvers",
+    "genre": "Bossa Nova",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/bossa-nova/03-slowly-slowly.mp3"
+  },
+  {
+    "id": "bossa-nova-04-small-window-home",
+    "title": "Small Window Home",
+    "artist": "Desmond Wilder",
+    "genre": "Bossa Nova",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/bossa-nova/04-small-window-home.mp3"
+  },
+  {
+    "id": "bossa-nova-05-it-follows-me-home",
+    "title": "It Follows Me Home",
+    "artist": "Elliot Sterling",
+    "genre": "Bossa Nova",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/bossa-nova/05-it-follows-me-home.mp3"
+  },
+  {
+    "id": "bossa-nova-06-quiet-little-hours",
+    "title": "Quiet Little Hours",
+    "artist": "June Ashcroft",
+    "genre": "Bossa Nova",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/bossa-nova/06-quiet-little-hours.mp3"
+  },
+  {
+    "id": "bossa-nova-07-quiet-laugh",
+    "title": "Quiet Laugh",
+    "artist": "Lila Hartley",
+    "genre": "Bossa Nova",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/bossa-nova/07-quiet-laugh.mp3"
+  },
+  {
+    "id": "bossa-nova-08-i-walk-it-slow",
+    "title": "I Walk It Slow",
+    "artist": "Rosalie Winslow",
+    "genre": "Bossa Nova",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/bossa-nova/08-i-walk-it-slow.mp3"
+  },
+  {
+    "id": "bossa-nova-09-one-last-slow-spin",
+    "title": "One Last Slow Spin",
+    "artist": "Thea Kinsey",
+    "genre": "Bossa Nova",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/bossa-nova/09-one-last-slow-spin.mp3"
+  },
+  {
+    "id": "bossa-nova-10-minutes-drift-by",
+    "title": "Minutes Drift By",
+    "artist": "Wes Amory",
+    "genre": "Bossa Nova",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/bossa-nova/10-minutes-drift-by.mp3"
+  },
+  {
+    "id": "blues-01-drum-and-daylight",
+    "title": "Drum and Daylight",
+    "artist": "Amos Kimball",
+    "genre": "Blues",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/blues/01-drum-and-daylight.mp3"
+  },
+  {
+    "id": "blues-02-chuva-de-verao",
+    "title": "Chuva de Verao",
+    "artist": "Bia Fontes",
+    "genre": "Blues",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/blues/02-chuva-de-verao.mp3"
+  },
+  {
+    "id": "blues-03-velvet-hour-v1",
+    "title": "Velvet Hour v1",
+    "artist": "Brass Alley Quartet",
+    "genre": "Blues",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/blues/03-velvet-hour-v1.mp3"
+  },
+  {
+    "id": "blues-04-cuore-leggero",
+    "title": "Cuore Leggero",
+    "artist": "Chiara Ferrini",
+    "genre": "Blues",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/blues/04-cuore-leggero.mp3"
+  },
+  {
+    "id": "blues-05-beira-do-rio",
+    "title": "Beira do Rio",
+    "artist": "Joaquim Reis",
+    "genre": "Blues",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/blues/05-beira-do-rio.mp3"
+  },
+  {
+    "id": "blues-06-rio-de-luz",
+    "title": "Rio de Luz",
+    "artist": "Lucia Serrano",
+    "genre": "Blues",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/blues/06-rio-de-luz.mp3"
+  },
+  {
+    "id": "blues-07-cafe-des-lilas",
+    "title": "Cafe des Lilas",
+    "artist": "Margot Lenoir",
+    "genre": "Blues",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/blues/07-cafe-des-lilas.mp3"
+  },
+  {
+    "id": "blues-08-le-pont-dore",
+    "title": "Le Pont Dore",
+    "artist": "Odette Lambert",
+    "genre": "Blues",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/blues/08-le-pont-dore.mp3"
+  },
+  {
+    "id": "blues-09-marche-du-matin",
+    "title": "Marche du Matin",
+    "artist": "Theo Vidal",
+    "genre": "Blues",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/blues/09-marche-du-matin.mp3"
+  },
+  {
+    "id": "blues-10-riverbend-morning",
+    "title": "Riverbend Morning",
+    "artist": "Wendell Hayes",
+    "genre": "Blues",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/blues/10-riverbend-morning.mp3"
+  },
+  {
+    "id": "jazz-01-wide-grey-morning",
+    "title": "Wide Grey Morning",
+    "artist": "Adaline Frost",
+    "genre": "Jazz",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/jazz/01-wide-grey-morning.mp3"
+  },
+  {
+    "id": "jazz-02-vitrail-du-soir",
+    "title": "Vitrail du Soir",
+    "artist": "Agnes Belmond",
+    "genre": "Jazz",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/jazz/02-vitrail-du-soir.mp3"
+  },
+  {
+    "id": "jazz-03-vidrio-y-luna",
+    "title": "Vidrio y Luna",
+    "artist": "Bernardo Iriarte",
+    "genre": "Jazz",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/jazz/03-vidrio-y-luna.mp3"
+  },
+  {
+    "id": "jazz-04-quiet-machinery",
+    "title": "Quiet Machinery",
+    "artist": "Clara Hensley",
+    "genre": "Jazz",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/jazz/04-quiet-machinery.mp3"
+  },
+  {
+    "id": "jazz-05-long-way-home",
+    "title": "Long Way Home",
+    "artist": "Everett Shaw",
+    "genre": "Jazz",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/jazz/05-long-way-home.mp3"
+  },
+  {
+    "id": "jazz-06-the-long-blue-minute",
+    "title": "The Long Blue Minute",
+    "artist": "Frances Kilbride",
+    "genre": "Jazz",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/jazz/06-the-long-blue-minute.mp3"
+  },
+  {
+    "id": "jazz-07-undertow-groove",
+    "title": "Undertow Groove",
+    "artist": "Grey Rain Motion",
+    "genre": "Jazz",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/jazz/07-undertow-groove.mp3"
+  },
+  {
+    "id": "jazz-08-cidade-adormecida",
+    "title": "Cidade Adormecida",
+    "artist": "Henrique Boaventura",
+    "genre": "Jazz",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/jazz/08-cidade-adormecida.mp3"
+  },
+  {
+    "id": "jazz-09-niebla-de-abril",
+    "title": "Niebla de Abril",
+    "artist": "Ignacio Salas",
+    "genre": "Jazz",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/jazz/09-niebla-de-abril.mp3"
+  },
+  {
+    "id": "jazz-10-domingo-dourado",
+    "title": "Domingo Dourado",
+    "artist": "Luana Peixoto",
+    "genre": "Jazz",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/jazz/10-domingo-dourado.mp3"
+  },
+  {
+    "id": "chillout-01-quiet-room",
+    "title": "Quiet Room",
+    "artist": "Alba Winters",
+    "genre": "Chillout",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/chillout/01-quiet-room.mp3"
+  },
+  {
+    "id": "chillout-02-manha-azul",
+    "title": "Manha Azul",
+    "artist": "Andre Cardoso",
+    "genre": "Chillout",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/chillout/02-manha-azul.mp3"
+  },
+  {
+    "id": "chillout-03-softer-sky",
+    "title": "Softer Sky",
+    "artist": "Ava Sterling",
+    "genre": "Chillout",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/chillout/03-softer-sky.mp3"
+  },
+  {
+    "id": "chillout-04-dias-leves-1-",
+    "title": "Dias Leves (1)",
+    "artist": "Beatriz Amaral",
+    "genre": "Chillout",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/chillout/04-dias-leves-1-.mp3"
+  },
+  {
+    "id": "chillout-05-luz-de-enero",
+    "title": "Luz de Enero",
+    "artist": "Carmen Solis",
+    "genre": "Chillout",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/chillout/05-luz-de-enero.mp3"
+  },
+  {
+    "id": "chillout-06-sole-lento",
+    "title": "Sole Lento",
+    "artist": "Elena Rossi",
+    "genre": "Chillout",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/chillout/06-sole-lento.mp3"
+  },
+  {
+    "id": "chillout-07-mare-d-argento",
+    "title": "Mare d Argento",
+    "artist": "Emanuele Costa",
+    "genre": "Chillout",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/chillout/07-mare-d-argento.mp3"
+  },
+  {
+    "id": "chillout-08-avenue-de-sel",
+    "title": "Avenue de Sel",
+    "artist": "Etienne Rochet",
+    "genre": "Chillout",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/chillout/08-avenue-de-sel.mp3"
+  },
+  {
+    "id": "chillout-09-low-and-golden",
+    "title": "Low And Golden",
+    "artist": "Fern Whitlock",
+    "genre": "Chillout",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/chillout/09-low-and-golden.mp3"
+  },
+  {
+    "id": "chillout-10-porto-calmo",
+    "title": "Porto Calmo",
+    "artist": "Henrique Braz",
+    "genre": "Chillout",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/chillout/10-porto-calmo.mp3"
+  },
+  {
+    "id": "marrakech-01-orange-tree-shade",
+    "title": "Orange Tree Shade",
+    "artist": "Amine Tazi",
+    "genre": "Marrakech",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/marrakech/01-orange-tree-shade.mp3"
+  },
+  {
+    "id": "marrakech-02-dusk-over-tiles",
+    "title": "Dusk Over Tiles",
+    "artist": "Camille Duret",
+    "genre": "Marrakech",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/marrakech/02-dusk-over-tiles.mp3"
+  },
+  {
+    "id": "marrakech-03-quiet-sandsea",
+    "title": "Quiet Sandsea",
+    "artist": "Elena Vasquez",
+    "genre": "Marrakech",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/marrakech/03-quiet-sandsea.mp3"
+  },
+  {
+    "id": "marrakech-04-khallini-maak",
+    "title": "Khallini Maak",
+    "artist": "Hind Bouziane",
+    "genre": "Marrakech",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/marrakech/04-khallini-maak.mp3"
+  },
+  {
+    "id": "marrakech-05-long-horizon-drift",
+    "title": "Long Horizon Drift",
+    "artist": "Julien Moreau",
+    "genre": "Marrakech",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/marrakech/05-long-horizon-drift.mp3"
+  },
+  {
+    "id": "marrakech-06-cedar-window",
+    "title": "Cedar Window",
+    "artist": "Karim Ouazzani",
+    "genre": "Marrakech",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/marrakech/06-cedar-window.mp3"
+  },
+  {
+    "id": "marrakech-07-courtyard-lanterns",
+    "title": "Courtyard Lanterns",
+    "artist": "Leila Benjelloun",
+    "genre": "Marrakech",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/marrakech/07-courtyard-lanterns.mp3"
+  },
+  {
+    "id": "marrakech-08-ochre-ridge",
+    "title": "Ochre Ridge",
+    "artist": "Mateo Ferrando",
+    "genre": "Marrakech",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/marrakech/08-ochre-ridge.mp3"
+  },
+  {
+    "id": "marrakech-09-moonless-plateau",
+    "title": "Moonless Plateau",
+    "artist": "Nadia El Fassi",
+    "genre": "Marrakech",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/marrakech/09-moonless-plateau.mp3"
+  },
+  {
+    "id": "marrakech-10-copper-terrace",
+    "title": "Copper Terrace",
+    "artist": "Rachid Amrani",
+    "genre": "Marrakech",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/marrakech/10-copper-terrace.mp3"
+  },
+  {
+    "id": "reggae-01-family-table-slow",
+    "title": "Family Table Slow",
+    "artist": "Alicia Palmer",
+    "genre": "Reggae",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/reggae/01-family-table-slow.mp3"
+  },
+  {
+    "id": "reggae-02-hot-step-sun",
+    "title": "Hot Step Sun",
+    "artist": "Brass Harbour Stompers",
+    "genre": "Reggae",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/reggae/02-hot-step-sun.mp3"
+  },
+  {
+    "id": "reggae-03-long-summer-every-day",
+    "title": "Long Summer Every Day",
+    "artist": "Dwayne Bailey",
+    "genre": "Reggae",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/reggae/03-long-summer-every-day.mp3"
+  },
+  {
+    "id": "reggae-04-no-map-no-hurry",
+    "title": "No Map No Hurry",
+    "artist": "Errol Blake",
+    "genre": "Reggae",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/reggae/04-no-map-no-hurry.mp3"
+  },
+  {
+    "id": "reggae-05-chemin-de-lumiere",
+    "title": "Chemin de Lumiere",
+    "artist": "Gaspard Millet",
+    "genre": "Reggae",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/reggae/05-chemin-de-lumiere.mp3"
+  },
+  {
+    "id": "reggae-06-bougies-et-gateau-au-soleil",
+    "title": "Bougies et Gateau au Soleil",
+    "artist": "Julien Marchand",
+    "genre": "Reggae",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/reggae/06-bougies-et-gateau-au-soleil.mp3"
+  },
+  {
+    "id": "reggae-07-maree-du-soir-au-soleil",
+    "title": "Maree du Soir au Soleil",
+    "artist": "Julien Marchand",
+    "genre": "Reggae",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/reggae/07-maree-du-soir-au-soleil.mp3"
+  },
+  {
+    "id": "reggae-08-ne-vale-la-pena-al-sole",
+    "title": "Ne Vale la Pena al Sole",
+    "artist": "Onda Lenta",
+    "genre": "Reggae",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/reggae/08-ne-vale-la-pena-al-sole.mp3"
+  },
+  {
+    "id": "reggae-09-family-table-and-blue-skies",
+    "title": "Family Table and Blue Skies",
+    "artist": "Simone Reid",
+    "genre": "Reggae",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/reggae/09-family-table-and-blue-skies.mp3"
+  },
+  {
+    "id": "reggae-10-kerzen-und-kuchen-in-der-sonne",
+    "title": "Kerzen und Kuchen in der Sonne",
+    "artist": "Sonnenseite",
+    "genre": "Reggae",
+    "src": "https://www.aimusic.com.tr/landing-assets/audio/reggae/10-kerzen-und-kuchen-in-der-sonne.mp3"
+  }
+]

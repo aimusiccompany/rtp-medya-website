@@ -1,11 +1,13 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { quoteSchema, escapeHtml } from "@/lib/form-validation";
 
 export async function POST(request: Request) {
   try {
-    const data = await request.json();
+    const result = quoteSchema.safeParse(await request.json().catch(() => null));
+    if (!result.success) return NextResponse.json({ error: "Lütfen zorunlu alanları ve e-posta/telefon bilgilerinizi kontrol edin." }, { status: 400 });
+    const data = result.data;
 
-    console.log("Form verisi alındı:", data);
 
     // 🪤 1️⃣ Honeypot kontrolü (bot form gönderimini engelle)
     if (data.website && data.website.trim() !== "") {
@@ -22,7 +24,7 @@ export async function POST(request: Request) {
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT),
-      secure: false,
+      secure: Number(process.env.SMTP_PORT) === 465,
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
@@ -33,16 +35,17 @@ export async function POST(request: Request) {
     const mailInfo = await transporter.sendMail({
       from: `"RTP Medya" <${process.env.SMTP_USER}>`,
       to: process.env.MAIL_TO,
+      replyTo: data.email,
       subject: `Yeni Teklif Talebi: ${data.companyName || data.name}`,
       html: `
         <h2>Yeni Teklif Talebi</h2>
-        <p><strong>Firma/Ad Soyad:</strong> ${data.companyName || data.name}</p>
-        <p><strong>E-posta:</strong> ${data.email}</p>
-        <p><strong>Telefon:</strong> ${data.phone}</p>
-        <p><strong>Sektör:</strong> ${data.sector || "-"}</p>
-        <p><strong>Hizmet:</strong> ${data.service || "-"}</p>
+        <p><strong>Firma/Ad Soyad:</strong> ${escapeHtml(data.companyName || data.name)}</p>
+        <p><strong>E-posta:</strong> ${escapeHtml(data.email)}</p>
+        <p><strong>Telefon:</strong> ${escapeHtml(data.phone)}</p>
+        <p><strong>Sektör:</strong> ${escapeHtml(data.sector || "-")}</p>
+        <p><strong>Hizmet:</strong> ${escapeHtml(data.service || "-")}</p>
         <p><strong>Mesaj:</strong></p>
-        <p>${data.message || "(Mesaj girilmemiş)"}</p>
+        <p>${escapeHtml(data.message || "(Mesaj girilmemiş)")}</p>
       `,
     });
 
@@ -50,10 +53,10 @@ export async function POST(request: Request) {
 
     // 🎯 5️⃣ Başarılı yanıt
     return NextResponse.json({ success: true });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("[Quote API] Hata:", error);
     return NextResponse.json(
-      { error: error.message || "Mesaj gönderilemedi" },
+      { error: "Mesaj gönderilemedi. Lütfen tekrar deneyin veya telefonla iletişime geçin." },
       { status: 500 }
     );
   }

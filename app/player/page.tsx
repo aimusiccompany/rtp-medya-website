@@ -11,11 +11,12 @@ import { Reveal } from "@/components/fx/reveal"
 import { SpotlightCard } from "@/components/fx/spotlight-card"
 
 export const metadata: Metadata = {
-  title: "RTP Medya Player - İşletme İçi Müzik Yayın Programı (Windows)",
+  title: "RTP Medya Player | Müzik Yayın Programı",
   description:
     "RTP Medya Player ile playlist, anons ve ses seviyesini şubelerinize göre zamanlayın ve yönetin. Windows için indirin.",
   alternates: { canonical: "/player" },
-  openGraph: { url: "/player", title: "RTP Medya Player - İşletme İçi Müzik Yayın Programı (Windows)", description: "RTP Medya Player ile playlist, anons ve ses seviyesini şubelerinize göre zamanlayın ve yönetin. Windows için indirin." },
+  openGraph: { url: "/player", title: "RTP Medya Player - İşletme İçi Müzik Yayın Programı (Windows)", description: "RTP Medya Player ile playlist, anons ve ses seviyesini şubelerinize göre zamanlayın ve yönetin. Windows için indirin.", locale: "tr_TR", siteName: "RTP Medya", type: "website", images: ["/og-image.png"] },
+  twitter: { card: "summary_large_image", title: "RTP Medya Player - İşletme İçi Müzik Yayın Programı (Windows)", description: "RTP Medya Player ile playlist, anons ve ses seviyesini şubelerinize göre zamanlayın ve yönetin. Windows için indirin.", images: ["/og-image.png"] },
 }
 
 // GitHub Release üzerinden indirilecek dosya

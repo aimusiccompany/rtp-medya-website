@@ -1,12 +1,14 @@
 import { NextResponse } from "next/server"
 import nodemailer from "nodemailer"
+import { contactSchema, escapeHtml } from "@/lib/form-validation"
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json()
+    const result = contactSchema.safeParse(await request.json().catch(() => null))
+    if (!result.success) return NextResponse.json({ error: "Lütfen zorunlu alanları ve e-posta/telefon bilgilerinizi kontrol edin." }, { status: 400 })
+    const body = result.data
     const { name, email, phone, subject, message, website } = body // 🪤 honeypot dahil
 
-    console.log("[Contact API] Form submission:", { name, email, phone, subject, message, website })
 
     // 🧠 1️⃣ Honeypot kontrolü – eğer doldurulmuşsa spam'dir
     if (website && website.trim() !== "") {
@@ -35,15 +37,16 @@ export async function POST(request: Request) {
     const info = await transporter.sendMail({
       from: `"RTP Medya" <${process.env.SMTP_USER}>`,
       to: process.env.MAIL_TO,
+      replyTo: email,
       subject: `Yeni İletişim Mesajı: ${subject}`,
       html: `
         <h2>Yeni İletişim Formu</h2>
-        <p><strong>Ad Soyad:</strong> ${name}</p>
-        <p><strong>E-posta:</strong> ${email}</p>
-        <p><strong>Telefon:</strong> ${phone}</p>
-        <p><strong>Konu:</strong> ${subject}</p>
+        <p><strong>Ad Soyad:</strong> ${escapeHtml(name)}</p>
+        <p><strong>E-posta:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Telefon:</strong> ${escapeHtml(phone)}</p>
+        <p><strong>Konu:</strong> ${escapeHtml(subject)}</p>
         <p><strong>Mesaj:</strong></p>
-        <p>${message}</p>
+        <p>${escapeHtml(message)}</p>
       `,
     })
 

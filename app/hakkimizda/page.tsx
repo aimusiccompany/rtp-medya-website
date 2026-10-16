@@ -18,7 +18,8 @@ export const metadata: Metadata = {
   description:
     "RTP Medya, 2005 yılından beri kurumsal radyo ve seslendirme çözümleriyle işletmelere hizmet veriyor. Misyonumuz, vizyonumuz ve rakamlarla RTP Medya.",
   alternates: { canonical: "/hakkimizda" },
-  openGraph: { url: "/hakkimizda", title: "Hakkımızda - 2005'ten Beri Kurumsal Ses ve Müzik Yayıncılığı", description: "RTP Medya, 2005 yılından beri kurumsal radyo ve seslendirme çözümleriyle işletmelere hizmet veriyor. Misyonumuz, vizyonumuz ve rakamlarla RTP Medya." },
+  openGraph: { url: "/hakkimizda", title: "Hakkımızda - 2005'ten Beri Kurumsal Ses ve Müzik Yayıncılığı", description: "RTP Medya, 2005 yılından beri kurumsal radyo ve seslendirme çözümleriyle işletmelere hizmet veriyor. Misyonumuz, vizyonumuz ve rakamlarla RTP Medya.", locale: "tr_TR", siteName: "RTP Medya", type: "website", images: ["/og-image.png"] },
+  twitter: { card: "summary_large_image", title: "Hakkımızda - 2005'ten Beri Kurumsal Ses ve Müzik Yayıncılığı", description: "RTP Medya, 2005 yılından beri kurumsal radyo ve seslendirme çözümleriyle işletmelere hizmet veriyor. Misyonumuz, vizyonumuz ve rakamlarla RTP Medya.", images: ["/og-image.png"] },
 }
 
 const stats = [

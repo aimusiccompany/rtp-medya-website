@@ -15,7 +15,7 @@ type Props = {
 export function Reveal({ children, delay = 0, y = 28, x = 0, className }: Props) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: Math.min(y, 26), x: Math.min(x, 26), scale: 0.985 }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0, x: 0, scale: 1 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.65, delay: Math.min(delay, 0.3), ease: [0.22, 1, 0.36, 1] }}
@@ -42,7 +42,7 @@ export function WordReveal({
         <span key={i} className="inline-block overflow-hidden pb-[0.12em] align-bottom" aria-hidden="true">
           <motion.span
             className="inline-block"
-            initial={{ y: "110%" }}
+            initial={false}
             animate={{ y: 0 }}
             transition={{ duration: 0.6, delay: delay + i * 0.05, ease: [0.22, 1, 0.36, 1] }}
           >

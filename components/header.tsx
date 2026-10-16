@@ -100,11 +100,11 @@ export function Header() {
           {navItems.map((item) =>
             item.dropdown ? (
               <div key={item.label} className="group relative">
-                <button className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-foreground/65 transition-colors group-hover:text-foreground">
+                <button type="button" className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-foreground/65 transition-colors group-hover:text-foreground group-focus-within:text-foreground">
                   {item.label}
                   <ChevronDown size={14} className="transition-transform duration-300 group-hover:rotate-180" />
                 </button>
-                <div className="invisible absolute left-1/2 top-full w-72 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                <div className="invisible absolute left-1/2 top-full w-72 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                   <div className="rounded-2xl border border-foreground/[0.1] bg-popover p-2 shadow-xl">
                     {item.dropdown.map((sub) => (
                       <Link
@@ -157,6 +157,7 @@ export function Header() {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label={isMobileMenuOpen ? "Menüyü kapat" : "Menüyü aç"}
           aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-navigation"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -165,6 +166,7 @@ export function Header() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            id="mobile-navigation"
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
@@ -176,6 +178,7 @@ export function Header() {
                 item.dropdown ? (
                   <div key={item.label}>
                     <button
+                      aria-expanded={openMobileGroup === item.label}
                       onClick={() => setOpenMobileGroup(openMobileGroup === item.label ? null : item.label)}
                       className="flex w-full items-center justify-between font-medium text-foreground"
                     >

@@ -12,11 +12,12 @@ import { Reveal } from "@/components/fx/reveal"
 import { SpotlightCard } from "@/components/fx/spotlight-card"
 
 export const metadata: Metadata = {
-  title: "Profesyonel Seslendirme - Reklam, Santral ve Anons Seslendirme",
+  title: "Profesyonel Seslendirme, Santral ve Anons",
   description:
     "Reklam, tanıtım filmi, telefon santrali ve mağaza anonsları için geniş seslendirmen kadrosu ve stüdyo kalitesinde kayıt. Hemen teklif alın.",
   alternates: { canonical: "/hizmetler/profesyonel-seslendirme" },
-  openGraph: { url: "/hizmetler/profesyonel-seslendirme", title: "Profesyonel Seslendirme - Reklam, Santral ve Anons Seslendirme", description: "Reklam, tanıtım filmi, telefon santrali ve mağaza anonsları için geniş seslendirmen kadrosu ve stüdyo kalitesinde kayıt. Hemen teklif alın." },
+  openGraph: { url: "/hizmetler/profesyonel-seslendirme", title: "Profesyonel Seslendirme - Reklam, Santral ve Anons Seslendirme", description: "Reklam, tanıtım filmi, telefon santrali ve mağaza anonsları için geniş seslendirmen kadrosu ve stüdyo kalitesinde kayıt. Hemen teklif alın.", locale: "tr_TR", siteName: "RTP Medya", type: "website", images: ["/og-image.png"] },
+  twitter: { card: "summary_large_image", title: "Profesyonel Seslendirme - Reklam, Santral ve Anons Seslendirme", description: "Reklam, tanıtım filmi, telefon santrali ve mağaza anonsları için geniş seslendirmen kadrosu ve stüdyo kalitesinde kayıt. Hemen teklif alın.", images: ["/og-image.png"] },
 }
 
 const services = [

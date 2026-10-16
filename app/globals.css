@@ -382,6 +382,11 @@
 }
 
 /* Form alanları */
+:where(a, button, summary):focus-visible {
+  outline: 3px solid var(--brand-action);
+  outline-offset: 4px;
+}
+
 .field {
   width: 100%;
   border-radius: 0.9rem;

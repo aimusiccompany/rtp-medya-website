@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   description:
     "İşletmeniz için kurumsal radyo, müzik yayını veya seslendirme teklifi alın. 24 saat içinde dönüş, ücretsiz demo ve danışmanlık.",
   alternates: { canonical: "/teklif-al" },
-  openGraph: { url: "/teklif-al", title: "Ücretsiz Teklif Alın - Kurumsal Radyo ve İşletme İçi Müzik Yayını", description: "İşletmeniz için kurumsal radyo, müzik yayını veya seslendirme teklifi alın. 24 saat içinde dönüş, ücretsiz demo ve danışmanlık." },
+  openGraph: { url: "/teklif-al", title: "Ücretsiz Teklif Alın - Kurumsal Radyo ve İşletme İçi Müzik Yayını", description: "İşletmeniz için kurumsal radyo, müzik yayını veya seslendirme teklifi alın. 24 saat içinde dönüş, ücretsiz demo ve danışmanlık.", locale: "tr_TR", siteName: "RTP Medya", type: "website", images: ["/og-image.png"] },
+  twitter: { card: "summary_large_image", title: "Ücretsiz Teklif Alın - Kurumsal Radyo ve İşletme İçi Müzik Yayını", description: "İşletmeniz için kurumsal radyo, müzik yayını veya seslendirme teklifi alın. 24 saat içinde dönüş, ücretsiz demo ve danışmanlık.", images: ["/og-image.png"] },
 }
 
 export default function TeklifAlPage() {

@@ -17,13 +17,14 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const { slug } = await params
   const sector = getSector(slug)
   if (!sector) return {}
-  const title = `${sector.title} - Lisanslı Ortam Müziği`
+  const title = `${sector.title} ve Anons Yönetimi`
   const path = `/hizmet-alanlari/${sector.slug}`
   return {
     title,
-    description: `${sector.description} Telif sorunu olmayan lisanslı müzik, 7/24 yayın ve uzaktan yönetim. Ücretsiz teklif alın.`,
+    description: `${sector.title}: işletmenize özel müzik seçimi, zamanlanmış anonslar ve merkezi yayın yönetimi. RTP Medya ile ücretsiz teklif alın.`,
     alternates: { canonical: path },
-    openGraph: { url: path, title, description: sector.description, images: [{ url: sector.image }] },
+    twitter: { card: "summary_large_image", title, description: sector.description, images: [sector.image] },
+    openGraph: { url: path, title, description: sector.description, locale: "tr_TR", siteName: "RTP Medya", type: "website", images: [{ url: sector.image }] },
   }
 }
 

@@ -6,7 +6,7 @@ export const SITE = {
   foundingYear: "2005",
   title: "RTP Medya | Kurumsal Radyo ve İşletme İçi Müzik Yayını",
   description:
-    "2005'ten beri işletmelere özel kurumsal radyo, lisanslı işletme içi müzik yayını, anons ve profesyonel seslendirme. Mağaza, restoran, otel, AVM ve market için ücretsiz teklif alın.",
+    "İşletmenize özel kurumsal radyo, lisanslı müzik yayını ve profesyonel seslendirme. Mağaza, restoran, otel ve AVM için RTP Medya’dan ücretsiz teklif alın.",
   keywords: [
     "kurumsal radyo",
     "işletme içi müzik yayını",

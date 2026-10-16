@@ -31,7 +31,7 @@ export function HeroSection() {
         <div className="grid items-center gap-16 lg:grid-cols-[1.2fr_0.8fr]">
           <div>
             <motion.p
-              initial={{ opacity: 0, y: 12 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
               className="mb-8 inline-flex items-center gap-3 rounded-full border border-foreground/[0.1] bg-foreground/[0.04] px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/70"
@@ -50,7 +50,7 @@ export function HeroSection() {
             </h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="mt-8 max-w-xl text-lg leading-relaxed text-foreground/60 md:text-xl"
@@ -60,7 +60,7 @@ export function HeroSection() {
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               className="mt-10 flex flex-col gap-4 sm:flex-row"
@@ -75,7 +75,7 @@ export function HeroSection() {
             </motion.div>
 
             <motion.dl
-              initial={{ opacity: 0 }}
+              initial={false}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               className="mt-14 grid max-w-xl grid-cols-3 gap-3 border-t border-foreground/[0.1] pt-8 sm:gap-6"

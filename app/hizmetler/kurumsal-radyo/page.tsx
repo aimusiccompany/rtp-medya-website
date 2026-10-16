@@ -12,11 +12,12 @@ import { Reveal } from "@/components/fx/reveal"
 import { SpotlightCard } from "@/components/fx/spotlight-card"
 
 export const metadata: Metadata = {
-  title: "Kurumsal Radyo Hizmeti - İşletmenize Özel Radyo ve Müzik Yayını",
+  title: "Kurumsal Radyo ve İşletme İçi Müzik Yayını",
   description:
     "İşletmenize özel kurumsal radyo: lisanslı müzik, anons yönetimi, 7/24 kesintisiz yayın ve uzaktan kontrol. RTP Medya ile markanızın sesini duyurun.",
   alternates: { canonical: "/hizmetler/kurumsal-radyo" },
-  openGraph: { url: "/hizmetler/kurumsal-radyo", title: "Kurumsal Radyo Hizmeti - İşletmenize Özel Radyo ve Müzik Yayını", description: "İşletmenize özel kurumsal radyo: lisanslı müzik, anons yönetimi, 7/24 kesintisiz yayın ve uzaktan kontrol. RTP Medya ile markanızın sesini duyurun." },
+  openGraph: { url: "/hizmetler/kurumsal-radyo", title: "Kurumsal Radyo Hizmeti - İşletmenize Özel Radyo ve Müzik Yayını", description: "İşletmenize özel kurumsal radyo: lisanslı müzik, anons yönetimi, 7/24 kesintisiz yayın ve uzaktan kontrol. RTP Medya ile markanızın sesini duyurun.", locale: "tr_TR", siteName: "RTP Medya", type: "website", images: ["/og-image.png"] },
+  twitter: { card: "summary_large_image", title: "Kurumsal Radyo Hizmeti - İşletmenize Özel Radyo ve Müzik Yayını", description: "İşletmenize özel kurumsal radyo: lisanslı müzik, anons yönetimi, 7/24 kesintisiz yayın ve uzaktan kontrol. RTP Medya ile markanızın sesini duyurun.", images: ["/og-image.png"] },
 }
 
 const benefits = [

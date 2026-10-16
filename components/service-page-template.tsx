@@ -7,6 +7,8 @@ import { CtaBand } from "@/components/cta-band"
 import { Reveal } from "@/components/fx/reveal"
 import { SpotlightCard } from "@/components/fx/spotlight-card"
 import { SectionHeading } from "@/components/section-heading"
+import Image from "next/image"
+import { SectorGuide } from "@/components/sector-guide"
 
 interface Benefit {
   title: string
@@ -14,6 +16,7 @@ interface Benefit {
 }
 
 interface ServicePageTemplateProps {
+  slug: string
   title: string
   description: string
   image?: string
@@ -29,11 +32,12 @@ const icons = [Music, Volume2, Radio]
 
 const defaultWhy = [
   "RTP Medya olarak işletmenizin konseptine ve hedef kitlenize özel müzik programları hazırlıyoruz. 2005 yılından bu yana edindiğimiz deneyimle, 46.000'den fazla projede çözüm sunduk.",
-  "Tüm müziklerimiz lisanslıdır ve telif hakları konusunda endişelenmenize gerek yoktur. 7/24 kesintisiz yayın, uzaktan yönetim ve profesyonel destek ile hizmetinizdeyiz.",
+  "Müzik kataloğunun kullanım alanı ve lisans kapsamı teklif ve sözleşmede belirtilir. 7/24 kesintisiz yayın, uzaktan yönetim ve profesyonel destek ile hizmetinizdeyiz.",
 ]
 
 /** Tüm "hizmet alanı" sayfalarının ortak şablonu. Header/Footer burada render edilir. */
 export function ServicePageTemplate({
+  slug,
   title,
   description,
   image,
@@ -47,6 +51,14 @@ export function ServicePageTemplate({
   return (
     <main className="min-h-screen">
       <Header />
+
+      <nav aria-label="İçerik yolu" className="container mx-auto px-4 pt-28 text-sm text-foreground/70">
+        <ol className="flex flex-wrap gap-2">
+          <li><Link href="/" className="hover:underline">Ana Sayfa</Link></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page">{title}</li>
+        </ol>
+      </nav>
 
       <PageHero eyebrow="Hizmet alanı" title={title} description={description}>
         <Link href="/teklif-al" className="btn-primary">
@@ -63,7 +75,7 @@ export function ServicePageTemplate({
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <Reveal x={-30} y={0}>
               <div className="group relative overflow-hidden rounded-[2rem] border border-foreground/[0.1]">
-                <img loading="lazy" decoding="async"
+                <Image width={900} height={630} sizes="(max-width: 1024px) 100vw, 50vw"
                   src={image || "/placeholder.svg?height=400&width=600"}
                   alt={title}
                   className="h-[420px] w-full object-cover transition-transform duration-1000 group-hover:scale-105"
@@ -124,6 +136,7 @@ export function ServicePageTemplate({
         </div>
       </section>
 
+      <SectorGuide slug={slug} title={title} />
       <CtaBand title={ctaTitle} description={`${ctaDescription} Ücretsiz demo ve danışmanlık için formu doldurun.`} label="Hemen başlayın" />
       <Footer />
     </main>

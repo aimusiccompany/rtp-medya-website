@@ -23,7 +23,7 @@ export const sectors: Sector[] = [
     image: "/elegant-restaurant-interior.webp",
     features: [
       "Restoran konseptinize özel müzik seçimi",
-      "Telif hakkı ödemesi gerektirmeyen lisanslı müzik",
+      "Kullanım kapsamı sözleşmede belirtilen lisanslı müzik",
       "Sabah, öğle ve akşam için farklı müzik programları",
       "Özel gün ve etkinlikler için müzik düzenlemeleri",
       "7/24 kesintisiz yayın",
@@ -59,7 +59,7 @@ export const sectors: Sector[] = [
     image: "/cafe-interior.webp",
     features: [
       "Kafeterya konseptinize özel müzik seçimi",
-      "Telif hakkı ödemesi gerektirmeyen lisanslı müzik",
+      "Kullanım kapsamı sözleşmede belirtilen lisanslı müzik",
       "Sabah, öğle ve akşam için farklı müzik programları",
       "Özel gün ve etkinlikler için müzik düzenlemeleri",
       "7/24 kesintisiz yayın",
@@ -98,7 +98,7 @@ export const sectors: Sector[] = [
       "Satışları artıran müzik stratejileri",
       "Farklı zaman dilimlerine göre müzik programları",
       "Kampanya ve özel günler için özel müzikler",
-      "Telif hakkı ödemesi gerektirmeyen lisanslı müzik",
+      "Kullanım kapsamı sözleşmede belirtilen lisanslı müzik",
       "Uzaktan yönetim ve anlık değişiklik imkanı",
     ],
     benefits: [
@@ -134,7 +134,7 @@ export const sectors: Sector[] = [
       "Alışveriş süresini uzatan müzik stratejileri",
       "Kampanya anonsları için özel müzik arası",
       "Farklı bölümler için farklı müzik temaları",
-      "Telif hakkı ödemesi gerektirmeyen lisanslı müzik",
+      "Kullanım kapsamı sözleşmede belirtilen lisanslı müzik",
       "7/24 kesintisiz yayın ve uzaktan yönetim",
     ],
     benefits: [
@@ -165,7 +165,7 @@ export const sectors: Sector[] = [
       "Farklı katlar ve bölümler için özel müzikler",
       "Etkinlik ve kampanyalar için özel düzenlemeler",
       "Ziyaretçi profiline göre müzik seçimi",
-      "Telif hakkı ödemesi gerektirmeyen lisanslı müzik",
+      "Kullanım kapsamı sözleşmede belirtilen lisanslı müzik",
       "Merkezi yönetim ve bölgesel kontrol imkanı",
     ],
     benefits: [
@@ -196,7 +196,7 @@ export const sectors: Sector[] = [
       "Lobi, restoran, spa gibi farklı alanlar için özel müzikler",
       "Sabah, öğle ve akşam için farklı müzik programları",
       "Özel etkinlikler için müzik düzenlemeleri",
-      "Telif hakkı ödemesi gerektirmeyen lisanslı müzik",
+      "Kullanım kapsamı sözleşmede belirtilen lisanslı müzik",
       "7/24 kesintisiz yayın ve bölgesel kontrol",
     ],
     benefits: [
@@ -226,7 +226,7 @@ export const sectors: Sector[] = [
       "Antrenman motivasyonu artıran enerjik müzikler",
       "Spa alanı için rahatlatıcı ve huzur veren müzikler",
       "Farklı antrenman türlerine göre müzik seçimi",
-      "Telif hakkı ödemesi gerektirmeyen lisanslı müzik",
+      "Kullanım kapsamı sözleşmede belirtilen lisanslı müzik",
       "Bölgesel kontrol ve uzaktan yönetim",
     ],
     benefits: [
@@ -257,7 +257,7 @@ export const sectors: Sector[] = [
       "Rahatlatıcı ve huzur veren müzik programları",
       "Farklı hizmet alanları için özel müzikler",
       "Müşteri profiline göre müzik seçimi",
-      "Telif hakkı ödemesi gerektirmeyen lisanslı müzik",
+      "Kullanım kapsamı sözleşmede belirtilen lisanslı müzik",
       "7/24 kesintisiz yayın ve kolay yönetim",
     ],
     benefits: [
@@ -288,7 +288,7 @@ export const sectors: Sector[] = [
       "Farklı bölümler için özel müzik programları",
       "Hasta ve ziyaretçi stresini azaltan müzik seçimi",
       "Bekleme alanları için rahatlatıcı müzikler",
-      "Telif hakkı ödemesi gerektirmeyen lisanslı müzik",
+      "Kullanım kapsamı sözleşmede belirtilen lisanslı müzik",
       "Bölgesel kontrol ve ses seviyesi yönetimi",
     ],
     benefits: [
@@ -301,8 +301,8 @@ export const sectors: Sector[] = [
         description: "Hastane ortamında huzurlu bir atmosfer yaratın",
       },
       {
-        title: "İyileşme Desteği",
-        description: "Müzik terapisi etkisi ile hastaların iyileşme sürecine katkı sağlayın",
+        title: "Bekleme Alanı Konforu",
+        description: "Bekleme alanlarında konuşma konforunu koruyan sakin bir atmosfer oluşturun",
       },
     ],
     ctaTitle: "Hastaneniz İçin Özel Müzik Çözümü",
@@ -319,7 +319,7 @@ export const sectors: Sector[] = [
       "Market alanı için uygun müzik programları",
       "Kampanya ve duyurular için müzik arası",
       "Farklı zaman dilimlerine göre müzik seçimi",
-      "Telif hakkı ödemesi gerektirmeyen lisanslı müzik",
+      "Kullanım kapsamı sözleşmede belirtilen lisanslı müzik",
       "Uzaktan yönetim ve kolay kontrol",
     ],
     benefits: [

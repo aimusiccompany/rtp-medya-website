@@ -3,10 +3,8 @@ import { SITE } from "@/lib/site"
 import { sectors } from "@/lib/sectors"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date()
   const page = (path: string, priority: number, changeFrequency: "weekly" | "monthly" = "monthly") => ({
     url: `${SITE.url}${path}`,
-    lastModified: now,
     changeFrequency,
     priority,
   })
